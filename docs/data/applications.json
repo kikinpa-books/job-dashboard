@@ -1,8 +1,8 @@
 {
   "generated": "2026-05-06",
   "summary": {
-    "total": 0,
-    "applied": 0,
+    "total": 6,
+    "applied": 6,
     "interviewing": 0,
     "offer": 0,
     "rejected": 0,
@@ -10,8 +10,159 @@
     "errors": 0,
     "needs_follow_up": 0
   },
-  "by_platform": [],
-  "recent": [],
+  "by_platform": [
+    [
+      "Indeed",
+      6
+    ]
+  ],
+  "recent": [
+    {
+      "date_applied": "2026-05-06",
+      "company": "The Ward Law Group, PL",
+      "title": "Personal Injury Litigation Paralegal",
+      "location": "Miami Lakes, FL",
+      "platform": "Indeed",
+      "status": "Applied"
+    },
+    {
+      "date_applied": "2026-05-06",
+      "company": "Confidential",
+      "title": "Litigation Paralegal",
+      "location": "Miami, FL",
+      "platform": "Indeed",
+      "status": "Applied"
+    },
+    {
+      "date_applied": "2026-05-06",
+      "company": "LOWERCASE, PLLC",
+      "title": "Civil Litigation Paralegal",
+      "location": "Miami, FL",
+      "platform": "Indeed",
+      "status": "Applied"
+    },
+    {
+      "date_applied": "2026-05-06",
+      "company": "PCMS Staffing",
+      "title": "Paralegal - Family Law",
+      "location": "Miami, FL",
+      "platform": "Indeed",
+      "status": "Applied"
+    },
+    {
+      "date_applied": "2026-05-06",
+      "company": "Steinger, Greene & Feiner",
+      "title": "Pre-Litigation Legal Assistant",
+      "location": "Fort Lauderdale, FL",
+      "platform": "Indeed",
+      "status": "Applied"
+    },
+    {
+      "date_applied": "2026-05-06",
+      "company": "Kanner and Pintaluga",
+      "title": "Pre-litigation Paralegal",
+      "location": "Boca Raton, FL",
+      "platform": "Indeed",
+      "status": "Applied"
+    }
+  ],
   "follow_up": [],
-  "ready_to_apply": []
+  "ready_to_apply": [
+    {
+      "score": 3,
+      "company": "Morgan & Morgan, P.A.",
+      "title": "Seeking Civil Litigation ParalegalSeeking Civil Litigation Paralegal with verification",
+      "location": "Fort Lauderdale, FL (On-site)",
+      "platform": "LinkedIn",
+      "apply_url": "https://www.linkedin.com/jobs/view/4397564454/?eBP=CwEAAAGd_0Nx4tB3T0pl57cmY-KC_ot2VGVQUA0QapC-OregRvNLNL19OCkRl06Tg1bMW_Ab_Qc8V23xfs1w3NBplawaeSh8kvrEdYyL5nLcaz60ghPdBaXFCKH9pKDmr0xg7O7u3QgYgqHoTd3RKGFqFqWnfP65qEzFzDszvZU9s3Y5wHwOrCS-mDKtYSI73o49EDCZx-y43BDLF2bswbU9M0JHti8HKv3Mngq1EaUnmiI40lcjO3UprDfzufseKDatc13ZrbND-TT6RRnYeHK30Yyn3KQDRE2JRVl9CupfKnADgaeRlVwid-IUEAGAiFuiQ3gKHMfuOjCl9pOQliv6x7NKuPqGk-bCXMa-rYNCIDpcZdBzPJGPreNWT363-EgtC0FKEO05eR61Ph6mp1-c4SkfClXqbUCLMAcFGPPNYjDBCdBFzCnwGYIzLKdatn3I0Pa0tQbbSRvY&refId=TqzD3LT%2Fj%2FLU1n8eqk1NbQ%3D%3D&trackingId=2JQLO36aCvTM9w0REnAK9g%3D%3D&trk=flagship3_search_srp_jobs"
+    },
+    {
+      "score": 3,
+      "company": "MXA Talent Solutions",
+      "title": "Corporate ParalegalCorporate Paralegal",
+      "location": "Miami-Fort Lauderdale Area (Hybrid)",
+      "platform": "LinkedIn",
+      "apply_url": "https://www.linkedin.com/jobs/view/4406702604/?eBP=CwEAAAGd_0Nx4v0dXb2FzzoFSx2vOb4_wuKh_FsPQms1flEn5vcM94L7-74qxhpKqQ7B2PDgnzLmwVa__HTQ3X4AfDfl8cAapYGr5xx4JwBGOZdsXpuv5756fypInqS_rKSD0i4iBmel1U9GcjrlaB-0iL7Se_AkLiaeM7ZpYOB6STNWC4oa2F2PV2SNDkk1FqVG2Olp7Gsvy3dn0xyw91jLisJp2X2uzHVNDYFzujAFLhkJQXi3Kbq6GFi7jJKR0tcKhdWul68TtKvdjG_gIOl9dEc-fE5M4FFCH94jpw0wLaUo4E1pJcvlNVW3UOmwCiNJwF7nctnT33qcVejkwfShVP-RraSkhztAsu2XTr_xxgdSdCJ2sURrmtfx7Pzdv_EhNe_fb0hNfs4BAMQ2ajcHeQiA6GXKNDKTUL3N8lFh0CWglbwJ_23iQ0uFRuJjvfCUrXFpIWTX9xBM5e7Bt4ZfRPOYNJYKPyCNCnh4smOd3g&refId=TqzD3LT%2Fj%2FLU1n8eqk1NbQ%3D%3D&trackingId=etHYuWCyRn4AzfWA5vpYaA%3D%3D&trk=flagship3_search_srp_jobs"
+    },
+    {
+      "score": 3,
+      "company": "Crossing Hurdles",
+      "title": "Real Estate Paralegal | $55/hr RemoteReal Estate Paralegal | $55/hr Remote",
+      "location": "United States (Remote)",
+      "platform": "LinkedIn",
+      "apply_url": "https://www.linkedin.com/jobs/view/4408987031/?eBP=BUDGET_EXHAUSTED_JOB&refId=TqzD3LT%2Fj%2FLU1n8eqk1NbQ%3D%3D&trackingId=3gsjH04RnVhTr7def3ghLA%3D%3D&trk=flagship3_search_srp_jobs"
+    },
+    {
+      "score": 2,
+      "company": "The Ward Law Group, PL",
+      "title": "Personal Injury Litigation Paralegal",
+      "location": "Miami Lakes, FL 33016",
+      "platform": "Indeed",
+      "apply_url": "https://www.indeed.com/rc/clk?jk=4e55b0e164ba7b90&bb=jrS32H9FnJLuVqhbWVWyQTvD7xHbR24-XUqL9aSk0DBP11ACVNXTrjIqRzb0op6XvgLiKMSqFBBzOYTl2hUlrbf53c3CTYmaa1Tb6iOUm7P__qs4D7caYHtn_3j8anGM&xkcb=SoDg67M3k_jsosyWlR0KbzkdCdPP&fccid=588c0ff37ca4bc6b&vjs=3"
+    },
+    {
+      "score": 2,
+      "company": "Confidential",
+      "title": "Litigation Paralegal",
+      "location": "Miami, FL 33133(North Coconut Grove area)",
+      "platform": "Indeed",
+      "apply_url": "https://www.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0Dff61BRIWhrlwoH8qdDFHJXtg6iqS2pVEqGP4lu3EfiLUmhCroGPPJsM2-eTL4AsBYQCiMIY0pVVJqtEQBFjGewIFuE5_si0Un7rXdE2cNvST2BgTwbt60PbzWe4ANmJ7I2jUuSaEE1ix5ycW0UWgxliosX8b-ym_k1OWJ9dQspf5ZUlNobR1JM-YdXhJNOt-Jf6r6EIhX5oYrfSbGcIIVzfxBgGiHFUnmRWodOF5Jn6VKrYJaXc4-NhvvDRhd3iWYTLiy9PF2echMWE-ziX5yFhPFr2NUsUZdrp8KVWcCuGVUmIMyekdvbvUA_DZ_Hep5sx2lotleHk3-NllXkk72sd3uR0Gd_MEbttGgTmN9y3c1N1GPokn-mBDZ78pZ_xyiLE2YtveZkShin-GBBmYRu8AIFM5cVo3MRFJdXATWWFHiuTR48HaQKFpXrg35HBOqwKdlj_gzTOJM6oI0bUXJv8PuXSqzvnz-3THKGCoPPkWe4oQCGTGT4VovBjgH0oEepR_sbXPK03DlLPKVsTdgoq5ftTfz0FQa9SbnB3MXo_6H4Jva2GlfDFQjZW_MNtmUkfWa-LEIT7456U2SiM1boNhC90_OefYk-P08uQEpXmbQ5CDDndbZV8pMoaOO7A6L9ORl_PBNyEb31w73xFYP-icOLtU1iNdei5RZrdnNjXhhcys_igwDk3oOs8gFhoyTfqPozpMAXyTYNpTS2YDpdEPwx2SZeLA=&xkcb=SoA96_M3k_jsosyWlR0IbzkdCdPP&camk=C3EPSzFlQw9_LiS7iDE_Cw==&p=3&fvj=0&vjs=3"
+    },
+    {
+      "score": 2,
+      "company": "LOWERCASE, PLLC, A LAW FIRM",
+      "title": "Civil Litigation Paralegal",
+      "location": "Miami, FL 33127(Little Haiti area)",
+      "platform": "Indeed",
+      "apply_url": "https://www.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0AEBS4lo90N8zc7WXUuftHHlW_jLogwUAUBtczYrOQ05dgMnWhGR7LjNaPKGAf9rKzR0yxhdH2ROFMs-7bv8wt6BB1Pj5v7eUZOC-puTIGhagqqR--hhF_sTWa73iOBxnJsj_c8geCmR9KhaybatBM9vYx69d6kT-L1FrfKnsLekK4iim6dTEhaUvTiAOxrFGjXkUDmN3BiN_VSaKVQ9JkJGlymavdUrLgPLA7yljpqqAUX9eSiSq2JrBssa0inyVVlCqbRKd_Fb1vdFuAEVHDgpn9UBxpcZx-uvlfhJmhElW7-9SsiW3KLP9-7ASHh3BTWmJyq-BhARFNo8NzYNkWMRP86T1aV4aN5yd1kuUBv3Q3CIJU-yfPvRpeemg1h39ryBw7qVwAe4aDFhOW7HdoceW5vaVLIDt05U8zDBtlRu-QiJnZnyDfkjJJqDX5rtkYVUoP_i1ahE6x6PGq1obuK3cl-P2wf5EVvnpdHL_sN4x8WudKDS61KSIdIsLSpomBHDLrRO9eJVGax86nMKbEB5nfsm4S09tE12CMdEVVsYIZvZjCSkQ2rEE9fW9hHb_70LyVFBFuwS0TOJ-qkuu7J188q-T2UleAzONMGV18qI6PsOhQRYNrl8WUxjX2QN4FBBzVpuZLRMlKe_PmwHnncpQM6Fswg9_Eq5kOzPf_c9rKIjQv_Qa2VgsCqNXKRhM4J3QfL69myM7f5Y6ogi7SYfJbkUegDsEekk3XN_9AxFw==&xkcb=SoAH6_M3k_jsosyWlR0ObzkdCdPP&camk=C3EPSzFlQw_K3z1fYF9a_Q==&p=5&fvj=0&vjs=3"
+    },
+    {
+      "score": 2,
+      "company": "Kogan & DiSalvo,P.A.",
+      "title": "Litigation Paralegal",
+      "location": "Boca Raton, FL 33432",
+      "platform": "Indeed",
+      "apply_url": "https://www.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0AHqbO95ZVVY3rynIJ1RXPQ7wTgZGRz0f1eWscqdT-En3ZjGLuEFHy-FUtjcfK6Kt1RiG0K4LV9RkHdG0SWkiAyiKeplvK5g63uLmdkaIehSoL6GCoWBW8p9rUZtjj9S0Y6aFPWe-L5j06hpm4orzZnmpSk_RqlZVsjOObx5D6rHlwPafY0q8PRtHKMjXIqFeijwrqFg81e3n68_qrlD9NRTYvUvIpRRRBuVewWIgYXSSluVgi85JuXfNYNja6Zxeykg6XYXPgWyc-y4zBXLwOf57eMMHWIPGd7iCeOe_Nu8Co66WhDMuLsBqXTuU0qkrYkOFW9eYlfoYAicrXQNX5a047eAh7TmS5cV6PLyciYQczpJmX54Oiq2mgND69v1BA3i2ThnK4HC4YUujkOCyOBSBcxgTWAPksEK3t5seMxsRgmIwVBeRdFQgE79cdZAS7m4ubZpSo1syLsfvu8lBfhYb1g00IMB-3X6x4X-sBE_bxxYK56-q1qlYPnVFvoo9gy10TnbJaBWFkwU7UKCIl0Lwp0Iz_hMceOC9ELJJinjz6wHfAGui5F49mCycVq-dR4Y-hEphqholTdCte03cO9hH-QKeOKrtP6VqM2tfBEoanfyqRISFt7_xdpFHRg0KXin1yaMrIKf3he7NLcr4lhwJr-Y9YqPz3JO5kILq2swa7IbZNn1KaXYCDLTLTG8RHEpZW_qY6pCVFECXbwqLjNW62SSHSiTPA=&xkcb=SoCa6_M3k_jsosyWlR0NbzkdCdPP&camk=UoKtGZLa3XJmppPVxby1fA==&p=6&fvj=0&vjs=3"
+    },
+    {
+      "score": 2,
+      "company": "PCMS Staffing",
+      "title": "Paralegal - Family Law",
+      "location": "Miami, FL 33131",
+      "platform": "Indeed",
+      "apply_url": "https://www.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0B7YHeUWYHXy_ERpSHB9HpGLYNSmV-SWvk8zOzwNRBBpd2oYM61FZW842CW7olXfejGtgyDJeN18RIsrYjEUkknCx8rFE7Z54ta7yv_wvHn2GFThOD0-fCtXzKotKfAztIONxipssWl-dPoyjTKXLoiMutGpWfntSZw-8oXTj14CLox23xDTlr3kfhNkeKt4FOjKeTOlfdNPu42tCf8p2EiLvtlbRZPTLry8w1jT_lFlr4n2SET4ilv7mW8kBcjzDoIRZafCRSm72CowgTU21YuZtyMKI0Hlv-VvweRQzP4BhbzyzH4KGAJEndSPQa0jyW3dvFlhLZcUv2qK6H3s2FZ0MIcpv0CfjEtXlfnwhsvtlmMYxCILpvbRuVt5KEm-6zUhMhjZxBajHQLnhbBCVKQ8PWNbFrM7xpBXaF81P5VRUIT91qUNTcOgiGm8bfb1ePNZMuegzqfVltB-BJxqprsjtMqwyjFJ9biOmgJE27-upoWkFosbP5ia2yFsD4WCvpunBw3UOrmOt_vHYKj2kIQd6k02x2yzMaJSUCh2_OXAP6CqoabHcCozkEOOLY0cmFzQx8XqXegDtoX-fOoXJ2saCSdTF1yA187WYrC3fDl0foN1RVMkEnPLZv2QsqMgeT2mp2bYt_SiscYXYEMvndnpiDNpsymbNbE8FajUZX7GFrc9mPtB5Suh21fOkGzZnSxjuFxi8-xFn56S58K0miCH0m6dys0fm8-w9S3mq7Fww==&xkcb=SoAu6_M3k_jsosyWlR0MbzkdCdPP&camk=H-lBaXMUocKYpLFpkrnfhQ==&p=7&fvj=0&vjs=3"
+    },
+    {
+      "score": 2,
+      "company": "Steinger, Greene & Feiner",
+      "title": "Pre-Litigation Legal Assistant",
+      "location": "Fort Lauderdale, FL 33309",
+      "platform": "Indeed",
+      "apply_url": "https://www.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0AjQSMNUC4VKqkqrW4R3uKKxNypiDMWPos-2YLLiXVmady6s9x2JRppyh_wm_yDz5JCtjgm-UdrGBO5DsTcLnwzMFzdCao6jnf0-9eQJ7ZZyuOwmK0qCs94nmws0P_hmYSyEEpRbQEUFpmzr0PSY7kYkqlZJhEsIVVoe_H9i6svB42rtVncyozPqw_7IdmhrSgLnP7Ru7ekn9HuJmLk7BF9s4lbruvQ43SHGvwQJTMHElpjF8GjOz1n3C-2M93vOjmE2E0f1VpBhgdENRUJj-xQoDviolcCO1GX8SlRQKko5E7n5_uTEdzam45SReIjhgtjG1i8BjAPbDfW8qx87mopkhUvvp3r8k2MIXdoISi_NE-U6W6SGnSNC7r6erToTD8obfFj7O70y3KvspuzQ1lbPpLgpZlEg1NPU9r2zsb8eTKBALVWx-32XOWmrW6idKIRl3mrvjjVNQBmS5uwv7IOR71JC-JQzvoWlWC0UMdAViUuiiI5Z4Q_8bQc3UujaOIZ0KdyBj7QZ4S4hzBgptb_c_RHn0AHERTVxtaAH_aEhDn3yLAX41msinJdN78ElnLPOrPnXRDLtvgIsoARD8AooI2ClOsh8cqJc18x2kxy6GGHvniPu-atARLxTFSKFcVYaSz0ytbfzAEhaxkXxbqrk4-krLyqA5JXqwEPj0wP3_RFSwgU9SWl19LRRd-ezHC-dDbYKxXkXfD9J240-2ALe-m0gErrLUNVbNlZMXOj7Q==&xkcb=SoBz6_M3k_jsosyWlR0CbzkdCdPP&camk=C3EPSzFlQw8eSYrWxHqz1Q==&p=9&fvj=0&vjs=3"
+    },
+    {
+      "score": 2,
+      "company": "THE LAW OFFICES OF KANNER AND PINTALUGA PA",
+      "title": "Pre-litigation Paralegal",
+      "location": "Boca Raton, FL 33432(Downtown area)",
+      "platform": "Indeed",
+      "apply_url": "https://www.indeed.com/rc/clk?jk=88b384713f4c0134&bb=jrS32H9FnJLuVqhbWVWyQYEhZiZ9x3tQnbfrCKx40KnFkOTrxofz8fhEmIpdoWxMvON5zCsJUTqO9aKG4ISrmEbd5oeV4wjK4ddUsVohwv2DOSwtxURusbOq6RV1Zppu&xkcb=SoAg67M3k_jsosyWlR0HbzkdCdPP&fccid=dd616958bd9ddc12&vjs=3"
+    },
+    {
+      "score": 2,
+      "company": "The Forum Group",
+      "title": "Real Estate ParalegalReal Estate Paralegal with verification",
+      "location": "Miami, FL (Hybrid)",
+      "platform": "LinkedIn",
+      "apply_url": "https://www.linkedin.com/jobs/view/4411225452/?eBP=CwEAAAGd_0Nx4ijZMaIyKQmQeqPrmrqaEg6w0gHQP-KXd69RKIuhbKCXocZWD1en6X90DNwG1fDEn0ljvd63Fi5QhZTgNfxCUzoi1MC731oq3wG0NQYo3sKIyRS3joR-cXRJ_Dyk1uW4FCrLR5gqdt8J8dpUuRD6idCFotSNlO7a1yuNt9xTWhTHQp82wyjQcLXb8uDPKWHXZsTTmvotrFGqeVNO3QZpr8ebOWGvPOVFGeAaHDyM6fQRHRcYXf_WALdBtakUl69rJKzqCITlV9qP78v220EV9uurIP3ZJJpOUTw4813bsrYwPwWbwSUFkFjaFcrhy8h1m2SIOPh0W4NUVhlmlb-f1OuXUr34mYLkfaUdlgwMTX8_ccTJpvHApHcjMO6qK8DUtJAg47_C6bJgU4VdX7ImW8X7BzPVYhxk9A6LESD524BSpmwsu2k98w0ihN5K0ljjmtFdzlI3Xd8typ7D81IOVxGoImU01Ueqdw&refId=TqzD3LT%2Fj%2FLU1n8eqk1NbQ%3D%3D&trackingId=R2c2Zg%2FG%2BxBNt44xWBkBww%3D%3D&trk=flagship3_search_srp_jobs"
+    },
+    {
+      "score": 2,
+      "company": "TBG | The Bachrach Group",
+      "title": "Legal AssistantLegal Assistant with verification",
+      "location": "Fort Lauderdale, FL (On-site)",
+      "platform": "LinkedIn",
+      "apply_url": "https://www.linkedin.com/jobs/view/4408892503/?eBP=CwEAAAGd_0Nx4rU6WinzwfVWZ52cZgN6XyLLlg8tcN_mOUqP1vFGaN4_1btHfKkwTDd2haOM-oq4S9q-d0uNLB__BPTM-4KjtlQOm1CThKjipeNkPUYV4W9I6Xx3NuF9COSo2Z0g8aYj2_BdjTVBEcTHyxcYhs6SyGbtWLySxyrFDkgoiIAJlQlKACYciaud7zw04a4Fl9_exvjI7U3bQGaFcihlJ-JJ2w3A2FN2BqyUfklG1lJTVYHPe9yDMGAZuWrUWlpcAQVT3XzjoBY3kAA5MVGaTLtmE4YmW6sc4EtWUIpnYkb_GeScAmWWxIEpV-ypX6OTGs_XU8Z8qeuUj520r1lr5A-xxsWmyeh-LSA76tFOkj2GrcpBoINmstZVhaBPRCfZeidwwFuotY3EWCSryrpKErWi-4zK8nmZDq0TtxJKb5Wk8kyhQPYVs53d11fijSvsTbX-RH43xd-zXkyOZRovt4e6IHcNwmLQs6HBn3WE68o&refId=TqzD3LT%2Fj%2FLU1n8eqk1NbQ%3D%3D&trackingId=6NSO9i8FL1dcda5XAK2mRA%3D%3D&trk=flagship3_search_srp_jobs"
+    }
+  ]
 }
