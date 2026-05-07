@@ -174,7 +174,8 @@
         <span>Updated: </span>
         <span id="last-updated" style="color:var(--text);">—</span>
         <span id="pipeline-status" style="display:none; align-items:center; gap:6px; color:var(--gold); margin-left:4px;"></span>
-        <button id="run-btn" onclick="runPipeline()" style="margin-left:8px; padding:4px 14px; border-radius:6px; border:1px solid rgba(201,168,76,0.4); background:rgba(201,168,76,0.08); color:var(--gold); font-size:12px; font-weight:500; cursor:pointer; transition:background 0.15s ease;" onmouseover="this.style.background='rgba(201,168,76,0.18)'" onmouseout="this.style.background='rgba(201,168,76,0.08)'">Run Agent</button>
+        <button onclick="openLogModal()" style="margin-left:8px; padding:4px 14px; border-radius:6px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.05); color:var(--text); font-size:12px; font-weight:500; cursor:pointer; transition:background 0.15s ease;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">+ Log Application</button>
+        <button id="run-btn" onclick="runPipeline()" style="margin-left:4px; padding:4px 14px; border-radius:6px; border:1px solid rgba(201,168,76,0.4); background:rgba(201,168,76,0.08); color:var(--gold); font-size:12px; font-weight:500; cursor:pointer; transition:background 0.15s ease;" onmouseover="this.style.background='rgba(201,168,76,0.18)'" onmouseout="this.style.background='rgba(201,168,76,0.08)'">Run Agent</button>
       </div>
     </div>
   </header>
@@ -297,6 +298,44 @@
   <footer style="text-align:center; padding:24px; color:var(--muted); font-size:12px; border-top:1px solid var(--border); margin-top:48px;">
     Kikinpa Job Tracker &mdash; auto-updated by agent
   </footer>
+
+  <!-- Log Application Modal -->
+  <div id="log-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:100; align-items:center; justify-content:center;">
+    <div class="card" style="width:100%; max-width:480px; padding:28px 32px; margin:16px; position:relative;">
+      <button onclick="closeLogModal()" style="position:absolute; top:16px; right:16px; background:none; border:none; color:var(--muted); font-size:18px; cursor:pointer; line-height:1;">&#x2715;</button>
+      <h3 style="font-family:'DM Serif Display',serif; font-size:18px; margin:0 0 20px;">Log a Past Application</h3>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div>
+          <label style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:4px;">Company *</label>
+          <input type="text" id="log-company" placeholder="e.g. Smith & Associates" />
+        </div>
+        <div>
+          <label style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:4px;">Job Title *</label>
+          <input type="text" id="log-title" placeholder="e.g. Personal Injury Paralegal" />
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div>
+            <label style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:4px;">Platform</label>
+            <input type="text" id="log-platform" placeholder="Indeed, LinkedIn…" />
+          </div>
+          <div>
+            <label style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:4px;">Location</label>
+            <input type="text" id="log-location" placeholder="Miami, FL" />
+          </div>
+        </div>
+        <div>
+          <label style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:4px;">Job URL</label>
+          <input type="text" id="log-url" placeholder="https://…" />
+        </div>
+        <div>
+          <label style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:4px;">Salary (optional)</label>
+          <input type="text" id="log-salary" placeholder="e.g. 65000" />
+        </div>
+      </div>
+      <div id="log-modal-status" style="min-height:20px; margin-top:12px; font-size:12px;"></div>
+      <button id="log-submit-btn" onclick="submitLogApplication()" style="margin-top:16px; width:100%; padding:10px; border-radius:8px; border:1px solid rgba(201,168,76,0.4); background:rgba(201,168,76,0.12); color:var(--gold); font-size:13px; font-weight:500; cursor:pointer; transition:background 0.15s ease;">Log Application</button>
+    </div>
+  </div>
 
 <script>
 let DATA = null;
@@ -628,6 +667,87 @@ async function loadData() {
 }
 
 loadData();
+
+function openLogModal() {
+  const token = localStorage.getItem('gh_pat') || prompt(
+    'Enter a GitHub Personal Access Token with Actions write permission.\n(It will be saved in your browser for future use.)'
+  );
+  if (!token) return;
+  localStorage.setItem('gh_pat', token);
+
+  ['log-company','log-title','log-platform','log-location','log-url','log-salary'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+  document.getElementById('log-modal-status').innerHTML = '';
+  document.getElementById('log-submit-btn').disabled = false;
+  document.getElementById('log-submit-btn').style.opacity = '1';
+  const modal = document.getElementById('log-modal');
+  modal.style.display = 'flex';
+  document.getElementById('log-company').focus();
+}
+
+function closeLogModal() {
+  document.getElementById('log-modal').style.display = 'none';
+}
+
+async function submitLogApplication() {
+  const company = document.getElementById('log-company').value.trim();
+  const title   = document.getElementById('log-title').value.trim();
+  if (!company || !title) {
+    document.getElementById('log-modal-status').innerHTML = '<span style="color:#f87171;">Company and Job Title are required.</span>';
+    return;
+  }
+
+  const token = localStorage.getItem('gh_pat');
+  if (!token) { closeLogModal(); return; }
+
+  const btn = document.getElementById('log-submit-btn');
+  const statusEl = document.getElementById('log-modal-status');
+  btn.disabled = true;
+  btn.style.opacity = '0.5';
+  statusEl.innerHTML = '<span style="color:var(--muted);">Submitting…</span>';
+
+  const job_id = 'manual_' + Date.now();
+
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${REPO}/actions/workflows/log-manual-application.yml/dispatches`,
+      {
+        method: 'POST',
+        headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ref: 'master',
+          inputs: {
+            job_id,
+            title,
+            company,
+            location:  document.getElementById('log-location').value.trim(),
+            platform:  document.getElementById('log-platform').value.trim(),
+            apply_url: document.getElementById('log-url').value.trim(),
+            salary:    document.getElementById('log-salary').value.trim(),
+          }
+        }),
+      }
+    );
+
+    if (!res.ok && res.status !== 204) {
+      if (res.status === 401 || res.status === 403) localStorage.removeItem('gh_pat');
+      throw new Error(`GitHub API error: ${res.status}`);
+    }
+  } catch (e) {
+    statusEl.innerHTML = `<span style="color:#f87171;">Error: ${e.message}</span>`;
+    btn.disabled = false; btn.style.opacity = '1';
+    return;
+  }
+
+  statusEl.innerHTML = '<span style="color:var(--gold);">Logging… this takes about 30 seconds.</span>';
+
+  const pipelineStatus = document.getElementById('pipeline-status');
+  pipelineStatus.style.display = 'flex';
+  await pollWorkflow('log-manual-application.yml', pipelineStatus, () => {
+    closeLogModal();
+  });
+}
 
 const REPO = 'kikinpa-books/job-dashboard';
 const WORKFLOW = 'run-pipeline.yml';
