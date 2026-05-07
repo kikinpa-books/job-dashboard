@@ -15,6 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TMP = ROOT / ".tmp"
+DOCS_DATA = ROOT / "docs" / "data"
 
 EXCLUDE_TITLE_KEYWORDS = [
     "intern", "internship", "volunteer", "law clerk", "law student",
@@ -129,10 +130,7 @@ def main():
     if not all_jobs:
         print("WARNING: No raw job files found — writing empty filter output.")
         output = TMP / "jobs_filtered.json"
-        manual_output = TMP / "jobs_manual.json"
         with open(output, "w") as f:
-            json.dump([], f)
-        with open(manual_output, "w") as f:
             json.dump([], f)
         return
 
@@ -197,7 +195,8 @@ def main():
     with open(output, "w") as f:
         json.dump(auto, f, indent=2)
 
-    manual_output = TMP / "jobs_manual.json"
+    DOCS_DATA.mkdir(parents=True, exist_ok=True)
+    manual_output = DOCS_DATA / "jobs_manual.json"
     with open(manual_output, "w") as f:
         json.dump(manual, f, indent=2)
 

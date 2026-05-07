@@ -21,7 +21,9 @@ FILTERED_PATH = TMP / "jobs_filtered.json"
 
 FOLLOW_UP_DAYS = 7
 SHEET_NAME_APPLICATIONS = "Applications"
-MANUAL_PATH = TMP / "jobs_manual.json"
+# Stored in docs/data so it persists across workflow runs (not .tmp which is ephemeral)
+MANUAL_PATH = DOCS_DATA / "jobs_manual.json"
+MANUAL_PATH_TMP = TMP / "jobs_manual.json"
 
 
 def get_sheet_rows():
@@ -94,8 +96,9 @@ def build_payload(rows):
             ready_to_apply = [j for j in json.load(f) if not_yet_applied(j)]
 
     manual_apply = []
-    if MANUAL_PATH.exists():
-        with open(MANUAL_PATH) as f:
+    manual_src = MANUAL_PATH if MANUAL_PATH.exists() else MANUAL_PATH_TMP
+    if manual_src.exists():
+        with open(manual_src) as f:
             manual_apply = [j for j in json.load(f) if not_yet_applied(j)]
 
     return {
