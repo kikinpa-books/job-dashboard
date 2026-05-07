@@ -1,8 +1,8 @@
 {
-  "generated": "2026-05-07 05:14 PM EDT",
+  "generated": "2026-05-07 05:23 PM EDT",
   "summary": {
-    "total": 12,
-    "applied": 12,
+    "total": 13,
+    "applied": 13,
     "interviewing": 0,
     "offer": 0,
     "rejected": 0,
@@ -17,7 +17,7 @@
     ],
     [
       "Adzuna",
-      3
+      4
     ],
     [
       "ZipRecruiter",
@@ -63,6 +63,10 @@
     ],
     [
       "Pre Litigation Personal Injury Paralegal/Case Manager",
+      1
+    ],
+    [
+      "Hybrid Foreclosure & Collections Paralegal",
       1
     ]
   ],
@@ -120,6 +124,15 @@
       "platform": "Adzuna",
       "status": "Applied",
       "apply_url": "https://www.adzuna.com/details/5721705210?utm_medium=api&utm_source=18888b84"
+    },
+    {
+      "date_applied": "2026-05-07",
+      "company": "Jobot",
+      "title": "Hybrid Foreclosure & Collections Paralegal",
+      "location": "Fort Lauderdale, Broward County",
+      "platform": "Adzuna",
+      "status": "Applied",
+      "apply_url": "https://www.adzuna.com/details/5721704445?utm_medium=api&utm_source=18888b84"
     },
     {
       "date_applied": "2026-05-06",
@@ -285,15 +298,6 @@
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5721708046?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$74,715 \u2013 $74,715/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Jobot",
-      "title": "Hybrid Foreclosure & Collections Paralegal",
-      "location": "Fort Lauderdale, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5721704445?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$53,740 \u2013 $53,740/yr",
       "reason": "Apply on Adzuna"
     },
     {
