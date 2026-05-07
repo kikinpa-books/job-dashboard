@@ -11,6 +11,7 @@ Usage:
 """
 
 import argparse
+import http.client
 import json
 import os
 import re
@@ -73,14 +74,36 @@ DOMAIN_TO_PLATFORM = {
 }
 
 
+def _platform_from_host(host):
+    host = host.lower().lstrip("www.")
+    for domain, name in DOMAIN_TO_PLATFORM.items():
+        if domain in host:
+            return name
+    return None
+
+
 def _source_from_url(url):
     if not url:
         return "Adzuna"
     try:
-        host = urlparse(url).netloc.lower().lstrip("www.")
-        for domain, name in DOMAIN_TO_PLATFORM.items():
-            if domain in host:
-                return name
+        parsed = urlparse(url)
+        # Check if the URL already points to a known board directly
+        direct = _platform_from_host(parsed.netloc)
+        if direct:
+            return direct
+        # Follow one redirect to find the real destination
+        conn_cls = http.client.HTTPSConnection if parsed.scheme == "https" else http.client.HTTPConnection
+        conn = conn_cls(parsed.netloc, timeout=5)
+        path = parsed.path + (f"?{parsed.query}" if parsed.query else "")
+        conn.request("HEAD", path, headers={"User-Agent": "KikinpaJobTracker/1.0"})
+        resp = conn.getresponse()
+        location = resp.getheader("Location", "")
+        conn.close()
+        if location:
+            dest_host = urlparse(location).netloc
+            found = _platform_from_host(dest_host)
+            if found:
+                return found
     except Exception:
         pass
     return "Adzuna"
