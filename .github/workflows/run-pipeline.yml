@@ -1,0 +1,52 @@
+name: Run Job Pipeline
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install playwright beautifulsoup4 gspread google-auth google-auth-oauthlib python-dotenv anthropic reportlab
+          playwright install chromium --with-deps
+
+      - name: Run pipeline
+        env:
+          HEADLESS: "1"
+          INDEED_EMAIL: ${{ secrets.INDEED_EMAIL }}
+          INDEED_PASSWORD: ${{ secrets.INDEED_PASSWORD }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          USER_FULL_NAME: ${{ secrets.USER_FULL_NAME }}
+          USER_EMAIL: ${{ secrets.USER_EMAIL }}
+          USER_PHONE: ${{ secrets.USER_PHONE }}
+        run: python tools/run_pipeline.py
+
+      - name: Commit and push dashboard data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data/applications.json
+          if git diff --cached --quiet; then
+            echo "No changes — skipping commit."
+          else
+            git commit -m "dashboard: auto-update $(date -u +%Y-%m-%d\ %H:%M\ UTC)"
+            git push
+          fi

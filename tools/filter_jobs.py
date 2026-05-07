@@ -144,23 +144,33 @@ def main():
 
     print(f"After scoring: {len(scored)} pass the threshold (min score {args.min_score})")
 
-    # Split: auto-applicable vs. manual (LinkedIn non-Easy-Apply)
-    auto = [j for j in scored if not (j.get("platform") == "LinkedIn" and not j.get("easy_apply", True))]
-    manual = [j for j in scored if j.get("platform") == "LinkedIn" and not j.get("easy_apply", True)]
+    # Only Indeed jobs are auto-applied remotely; everything else goes to manual review
+    AUTO_PLATFORMS = {"Indeed"}
+    auto = [j for j in scored if j.get("platform") in AUTO_PLATFORMS]
+    manual = [j for j in scored if j.get("platform") not in AUTO_PLATFORMS]
 
-    # Add any LinkedIn non-easy-apply jobs that scored below threshold too
+    # Also surface all non-Indeed LinkedIn/ZipRecruiter/SimplyHired jobs that scored below
+    # threshold (so user sees them even if they didn't pass scoring)
+    manual_ids = {j.get("job_id") for j in manual}
     for job in all_jobs:
+        if job.get("platform") in AUTO_PLATFORMS:
+            continue
         title_lower = job.get("title", "").lower()
         if any(kw in title_lower for kw in EXCLUDE_TITLE_KEYWORDS):
             continue
-        if job.get("platform") == "LinkedIn" and not job.get("easy_apply", True):
-            job_id = job.get("job_id")
-            if not any(m.get("job_id") == job_id for m in manual):
-                job["reason"] = "LinkedIn non-Easy-Apply"
-                manual.append(job)
+        if job.get("job_id") not in manual_ids:
+            manual.append(job)
+            manual_ids.add(job.get("job_id"))
 
+    REASON_MAP = {
+        "LinkedIn": "LinkedIn non-Easy-Apply",
+        "ZipRecruiter": "Apply on ZipRecruiter",
+        "SimplyHired": "Apply on SimplyHired",
+        "Glassdoor": "Apply on Glassdoor",
+    }
     for job in manual:
-        job["reason"] = "LinkedIn non-Easy-Apply"
+        platform = job.get("platform", "")
+        job["reason"] = REASON_MAP.get(platform, f"Apply on {platform}")
         # Clean duplicated title text (LinkedIn scraper artifact)
         title = job.get("title", "")
         mid = len(title) // 2

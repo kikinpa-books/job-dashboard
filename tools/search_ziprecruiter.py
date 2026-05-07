@@ -18,6 +18,7 @@ from urllib.parse import urlencode
 
 from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
+import os
 from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -52,71 +53,45 @@ def parse_jobs(html):
     soup = BeautifulSoup(html, "html.parser")
     jobs = []
 
-    cards = soup.select(
-        "article.job_result, "
-        "div[data-testid='job-card'], "
-        "li[data-testid='job-card'], "
-        "div.jobList-item"
-    )
+    cards = soup.find_all("article", id=re.compile(r"^job-card-"))
 
     for card in cards:
         try:
-            title_el = card.select_one(
-                "a[data-testid='job-title'], "
-                "h2.jobList-title a, "
-                "a.job_link, "
-                "a[class*='title']"
-            )
+            card_id = card.get("id", "")
+            uuid = card_id.replace("job-card-", "")
+
+            title_el = card.find("h2")
             if not title_el:
                 continue
-
             title = title_el.get_text(strip=True)
-            href = title_el.get("href", "")
 
-            job_id_match = re.search(r"/job/([a-zA-Z0-9_-]+)", href)
-            raw_id = job_id_match.group(1) if job_id_match else str(abs(hash(title + href)))
-            job_id = f"ziprecruiter_{raw_id}"
+            job_id = f"ziprecruiter_{uuid}"
+            apply_url = f"https://www.ziprecruiter.com/ojob/{uuid}"
 
-            apply_url = href if href.startswith("http") else f"https://www.ziprecruiter.com{href}"
-
-            company_el = card.select_one(
-                "[data-testid='job-employer'], "
-                "a.t_org_link, "
-                "span[class*='company'], "
-                "p.jobList-company"
-            )
+            company_el = card.find("a", attrs={"data-testid": "job-card-company"})
             company = company_el.get_text(strip=True) if company_el else ""
 
-            location_el = card.select_one(
-                "[data-testid='job-location'], "
-                "span[class*='location'], "
-                "p.jobList-location"
-            )
+            location_el = card.find("a", attrs={"data-testid": "job-card-location"})
             location_text = location_el.get_text(strip=True) if location_el else ""
 
-            salary_el = card.select_one(
-                "[data-testid='job-salary'], "
-                "span[class*='salary'], "
-                "div[class*='compensation']"
-            )
-            salary = salary_el.get_text(strip=True) if salary_el else ""
+            salary = ""
+            for p in card.find_all("p"):
+                t = p.get_text(strip=True)
+                if "$" in t or "/yr" in t or "/hr" in t:
+                    salary = t
+                    break
 
-            date_el = card.select_one(
-                "[data-testid='job-date'], "
-                "span[class*='date'], "
-                "time"
-            )
-            date_posted = date_el.get_text(strip=True) if date_el else ""
+            quick_apply = bool(card.find(string=re.compile(r"Quick apply", re.I)))
 
             jobs.append({
                 "job_id": job_id,
                 "title": title,
                 "company": company,
                 "location": location_text,
-                "date_posted": date_posted,
+                "date_posted": "",
                 "apply_url": apply_url,
                 "salary_listed": salary,
-                "easy_apply": True,
+                "easy_apply": quick_apply,
                 "platform": "ZipRecruiter",
                 "description": "",
                 "scraped_date": date.today().isoformat(),
@@ -132,7 +107,8 @@ def search_ziprecruiter(keywords, location, days=7):
     all_jobs = []
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        headless = os.environ.get("HEADLESS", "0") == "1"
+        browser = p.chromium.launch(headless=headless)
         context = browser.new_context(
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
         )

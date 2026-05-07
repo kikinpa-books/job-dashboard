@@ -18,6 +18,7 @@ from urllib.parse import urlencode
 
 from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
+import os
 from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -50,58 +51,35 @@ def parse_jobs(html):
     soup = BeautifulSoup(html, "html.parser")
     jobs = []
 
-    cards = soup.select(
-        "li[data-testid='jobsList-item'], "
-        "article[data-testid='job-card'], "
-        "div.SerpJob"
-    )
+    cards = soup.find_all("div", attrs={"data-testid": "searchSerpJob"})
 
     for card in cards:
         try:
-            title_el = card.select_one(
-                "a[data-testid='job-title'], "
-                "h2[data-testid='jobTitle'] a, "
-                "a.jobposting-title"
-            )
-            if not title_el:
+            job_key = card.get("data-jobkey", "")
+            if not job_key:
                 continue
 
+            title_el = card.find("h2", attrs={"data-testid": "searchSerpJobTitle"})
+            if not title_el:
+                continue
             title = title_el.get_text(strip=True)
-            href = title_el.get("href", "")
 
-            job_id_match = re.search(r"/job/([a-zA-Z0-9_-]+)", href)
-            raw_id = job_id_match.group(1) if job_id_match else str(abs(hash(title + href)))
-            job_id = f"simplyhired_{raw_id}"
+            job_id = f"simplyhired_{job_key}"
+            apply_url = f"https://www.simplyhired.com/job/{job_key}"
 
-            apply_url = href if href.startswith("http") else f"https://www.simplyhired.com{href}"
-
-            company_el = card.select_one(
-                "[data-testid='company-name'], "
-                "span[data-testid='companyName'], "
-                "span.jobposting-company"
-            )
+            company_el = card.find("span", attrs={"data-testid": "companyName"})
             company = company_el.get_text(strip=True) if company_el else ""
 
-            location_el = card.select_one(
-                "[data-testid='job-location'], "
-                "span[data-testid='jobLocation'], "
-                "span.jobposting-location"
-            )
+            location_el = card.find("span", attrs={"data-testid": "searchSerpJobLocation"})
             location_text = location_el.get_text(strip=True) if location_el else ""
 
-            salary_el = card.select_one(
-                "[data-testid='job-estimated-salary'], "
-                "span[data-testid='compensation'], "
-                "div[class*='salary']"
-            )
+            salary_el = card.find("span", attrs={"data-testid": re.compile(r"^salaryChip")})
             salary = salary_el.get_text(strip=True) if salary_el else ""
 
-            date_el = card.select_one(
-                "[data-testid='job-date'], "
-                "span[data-testid='pubDate'], "
-                "time"
-            )
+            date_el = card.find("p", attrs={"data-testid": "searchSerpJobDateStamp"})
             date_posted = date_el.get_text(strip=True) if date_el else ""
+
+            quick_apply = bool(card.find("p", attrs={"data-testid": "searchSerpJobQuickApply"}))
 
             jobs.append({
                 "job_id": job_id,
@@ -111,7 +89,7 @@ def parse_jobs(html):
                 "date_posted": date_posted,
                 "apply_url": apply_url,
                 "salary_listed": salary,
-                "easy_apply": False,
+                "easy_apply": quick_apply,
                 "platform": "SimplyHired",
                 "description": "",
                 "scraped_date": date.today().isoformat(),
@@ -127,7 +105,8 @@ def search_simplyhired(keywords, location, days=7):
     all_jobs = []
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        headless = os.environ.get("HEADLESS", "0") == "1"
+        browser = p.chromium.launch(headless=headless)
         context = browser.new_context(
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
         )

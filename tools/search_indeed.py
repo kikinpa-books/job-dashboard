@@ -17,6 +17,7 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
+import os
 from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -100,7 +101,8 @@ def search_indeed(keywords, location, days=7):
     all_jobs = []
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        headless = os.environ.get("HEADLESS", "0") == "1"
+        browser = p.chromium.launch(headless=headless)
         context = browser.new_context(
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
         )
