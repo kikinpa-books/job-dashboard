@@ -1,8 +1,8 @@
 {
-  "generated": "2026-05-07 05:04 PM EDT",
+  "generated": "2026-05-07 05:10 PM EDT",
   "summary": {
-    "total": 10,
-    "applied": 10,
+    "total": 11,
+    "applied": 11,
     "interviewing": 0,
     "offer": 0,
     "rejected": 0,
@@ -16,15 +16,19 @@
       8
     ],
     [
-      "ZipRecruiter",
-      1
+      "Adzuna",
+      2
     ],
     [
-      "Adzuna",
+      "ZipRecruiter",
       1
     ]
   ],
   "by_title": [
+    [
+      "Paralegal",
+      2
+    ],
     [
       "Personal Injury Litigation Paralegal",
       1
@@ -59,10 +63,6 @@
     ],
     [
       "Pre Litigation Personal Injury Paralegal/Case Manager",
-      1
-    ],
-    [
-      "Paralegal",
       1
     ]
   ],
@@ -102,6 +102,15 @@
       "platform": "Adzuna",
       "status": "Applied",
       "apply_url": "https://www.adzuna.com/land/ad/5721778503?se=ugEfx1JK8RG90-MdKnz7dw&utm_medium=api&utm_source=18888b84&v=AAF0002F2EE361E4433EDA4C9036AC3BDB371329"
+    },
+    {
+      "date_applied": "2026-05-07",
+      "company": "Banker Lopez Gassler P.A.",
+      "title": "Paralegal",
+      "location": "Fort Lauderdale, Broward County",
+      "platform": "Adzuna",
+      "status": "Applied",
+      "apply_url": "https://www.adzuna.com/land/ad/5721778503?se=9LmSPVhK8RG90-MdKnz7dw&utm_medium=api&utm_source=18888b84&v=AAF0002F2EE361E4433EDA4C9036AC3BDB371329"
     },
     {
       "date_applied": "2026-05-06",
@@ -161,15 +170,6 @@
   "follow_up": [],
   "ready_to_apply": [],
   "manual_apply": [
-    {
-      "company": "Banker Lopez Gassler P.A.",
-      "title": "Paralegal",
-      "location": "Fort Lauderdale, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5721778503?se=9LmSPVhK8RG90-MdKnz7dw&utm_medium=api&utm_source=18888b84&v=AAF0002F2EE361E4433EDA4C9036AC3BDB371329",
-      "salary_listed": "$89,315 \u2013 $89,315/yr",
-      "reason": "Apply on Adzuna"
-    },
     {
       "company": "Jobot",
       "title": "Personal Injury Litigation Paralegal",
