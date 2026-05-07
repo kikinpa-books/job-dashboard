@@ -26,7 +26,7 @@ SKIP_TITLE_KEYWORDS = [
     "fbi", "special agent", "attorney", "counsel",
 ]
 
-MAX_APPLICATIONS = 10
+MAX_APPLICATIONS = 5
 
 
 def run(cmd, **kwargs):

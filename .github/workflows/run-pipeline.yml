@@ -36,7 +36,7 @@ jobs:
             "location": "Fort Lauderdale, FL",
             "min_salary": 65000,
             "days": 7,
-            "max_applications": 10
+            "max_applications": 5
           }
           EOF
 
