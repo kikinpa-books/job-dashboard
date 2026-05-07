@@ -148,18 +148,21 @@ def main():
 
     print(f"After scoring: {len(scored)} pass the threshold (min score {args.min_score})")
 
-    # Only Indeed jobs are auto-applied remotely; everything else goes to manual review
+    # Indeed jobs use the dedicated Indeed apply flow.
+    # ATS-hosted jobs (Greenhouse, Lever, iCIMS, Workday) use the generic apply flow.
+    # Everything else goes to manual review.
     AUTO_PLATFORMS = {"Indeed"}
-    # Adzuna redirects to external sites so always manual
+    ATS_PLATFORMS  = {"Greenhouse", "Lever", "iCIMS", "Workday", "Recruitics"}
 
-    auto = [j for j in scored if j.get("platform") in AUTO_PLATFORMS]
-    manual = [j for j in scored if j.get("platform") not in AUTO_PLATFORMS]
+    auto   = [j for j in scored if j.get("platform") in AUTO_PLATFORMS]
+    ats    = [j for j in scored if j.get("platform") in ATS_PLATFORMS]
+    manual = [j for j in scored if j.get("platform") not in AUTO_PLATFORMS | ATS_PLATFORMS]
 
-    # Also surface all non-Indeed LinkedIn/ZipRecruiter/SimplyHired jobs that scored below
-    # threshold (so user sees them even if they didn't pass scoring)
+    # Also surface all non-Indeed/non-ATS jobs that scored below threshold
+    # (so user sees them even if they didn't pass scoring)
     manual_ids = {j.get("job_id") for j in manual}
     for job in all_jobs:
-        if job.get("platform") in AUTO_PLATFORMS:
+        if job.get("platform") in AUTO_PLATFORMS | ATS_PLATFORMS:
             continue
         title_lower = job.get("title", "").lower()
         if any(kw in title_lower for kw in EXCLUDE_TITLE_KEYWORDS):
@@ -185,26 +188,37 @@ def main():
         elif " with verification" in title:
             job["title"] = title.split(" with verification")[0]
 
-    auto = deduplicate(auto)
+    auto   = deduplicate(auto)
     auto.sort(key=lambda j: j["score"], reverse=True)
+    ats    = deduplicate(ats)
+    ats.sort(key=lambda j: j.get("score", 0), reverse=True)
     manual = deduplicate(manual)
 
-    print(f"After deduplication: {len(auto)} auto-apply, {len(manual)} manual-apply listings")
+    print(f"After deduplication: {len(auto)} Indeed auto-apply, {len(ats)} ATS auto-apply, {len(manual)} manual-apply")
 
     output = TMP / "jobs_filtered.json"
     with open(output, "w") as f:
         json.dump(auto, f, indent=2)
+
+    ats_output = TMP / "jobs_filtered_ats.json"
+    with open(ats_output, "w") as f:
+        json.dump(ats, f, indent=2)
 
     DOCS_DATA.mkdir(parents=True, exist_ok=True)
     manual_output = DOCS_DATA / "jobs_manual.json"
     with open(manual_output, "w") as f:
         json.dump(manual, f, indent=2)
 
-    print(f"\nTop 5 auto-apply results:")
+    print(f"\nTop 5 auto-apply (Indeed):")
     for job in auto[:5]:
         print(f"  [{job['score']}] {job['company']} | {job['title']} | {job['location']} | {job['platform']}")
 
-    print(f"\nSaved {len(auto)} filtered jobs to {output}")
+    print(f"\nTop 5 auto-apply (ATS):")
+    for job in ats[:5]:
+        print(f"  [{job.get('score', 0)}] {job['company']} | {job['title']} | {job['location']} | {job['platform']}")
+
+    print(f"\nSaved {len(auto)} Indeed jobs to {output}")
+    print(f"Saved {len(ats)} ATS jobs to {ats_output}")
     print(f"Saved {len(manual)} manual-apply jobs to {manual_output}")
 
 

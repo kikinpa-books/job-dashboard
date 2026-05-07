@@ -573,7 +573,22 @@ async function confirmManualApply(job, cell, didApply) {
     );
 
     if (res.ok || res.status === 204) {
-      // Remove the row immediately (optimistic)
+      // Optimistically add to Recent Applications
+      const today = new Date().toISOString().slice(0, 10);
+      const newEntry = {
+        date_applied: today,
+        company:      job.company || '',
+        title:        job.title || '',
+        location:     job.location || '',
+        platform:     job.platform || '',
+        apply_url:    job.apply_url || '',
+        status:       'Applied',
+      };
+      if (!DATA.recent) DATA.recent = [];
+      DATA.recent.unshift(newEntry);
+      if (activeTab === 'recent') renderRecent(DATA.recent);
+
+      // Remove the row from Manual Apply immediately (optimistic)
       const row = cell.closest('tr');
       row.style.transition = 'opacity 0.4s ease';
       row.style.opacity = '0';
@@ -596,25 +611,51 @@ async function confirmManualApply(job, cell, didApply) {
   }
 }
 
+function getDiscardedIds() {
+  try { return new Set(JSON.parse(localStorage.getItem('discarded_manual') || '[]')); }
+  catch (_) { return new Set(); }
+}
+
+function discardManualJob(jobId, row) {
+  try {
+    const ids = JSON.parse(localStorage.getItem('discarded_manual') || '[]');
+    if (!ids.includes(jobId)) ids.push(jobId);
+    localStorage.setItem('discarded_manual', JSON.stringify(ids));
+  } catch (_) {}
+  row.style.transition = 'opacity 0.35s ease';
+  row.style.opacity = '0';
+  setTimeout(() => {
+    row.remove();
+    const badge = document.getElementById('manual-badge');
+    const current = parseInt(badge.textContent || '0');
+    if (current > 1) badge.textContent = current - 1;
+    else { badge.textContent = '0'; badge.style.display = 'none'; }
+  }, 350);
+}
+
 function renderManual(rows) {
   const tbody = document.getElementById('tbody-manual');
   const badge = document.getElementById('manual-badge');
-  const filtered = filterRows(rows);
   const appliedUrls = getAppliedIds();
-  badge.textContent = rows.length;
-  badge.style.display = rows.length ? 'inline' : 'none';
+  const discardedIds = getDiscardedIds();
 
-  if (!filtered.length) {
+  const visible = filterRows(rows).filter(r => !discardedIds.has(r.job_id));
+
+  badge.textContent = rows.filter(r => !discardedIds.has(r.job_id)).length;
+  badge.style.display = badge.textContent !== '0' ? 'inline' : 'none';
+
+  if (!visible.length) {
     tbody.innerHTML = '<tr><td colspan="7" style="padding:32px; text-align:center; color:var(--muted);">No manual-apply jobs queued.</td></tr>';
     return;
   }
-  tbody.innerHTML = filtered.map((r, i) => {
+  tbody.innerHTML = visible.map((r, i) => {
     const alreadyApplied = r.apply_url && appliedUrls.has(r.apply_url);
-    const btnHtml = r.apply_url
+    const applyBtn = r.apply_url
       ? alreadyApplied
         ? `<span class="apply-link" style="color:#6ee7a0; border-color:rgba(34,197,94,0.3); cursor:default;">Applied</span>`
         : `<button onclick="showAppliedConfirm(window._manualRows[${i}], this)" style="padding:3px 12px; border-radius:6px; border:1px solid rgba(201,168,76,0.3); background:none; color:var(--gold); font-size:12px; cursor:pointer; transition:background 0.15s;">Apply</button>`
       : '—';
+    const discardBtn = `<button onclick="discardManualJob('${(r.job_id || '').replace(/'/g, "\\'")}', this.closest('tr'))" title="Remove from list" style="margin-left:6px; padding:3px 10px; border-radius:6px; border:1px solid rgba(239,68,68,0.25); background:none; color:#f87171; font-size:11px; cursor:pointer; transition:background 0.15s, opacity 0.15s;" onmouseover="this.style.background='rgba(239,68,68,0.1)'" onmouseout="this.style.background='none'">Remove</button>`;
     return `<tr>
       <td style="font-weight:500;${alreadyApplied ? 'opacity:0.5;' : ''}">${r.company || '—'}</td>
       <td style="${alreadyApplied ? 'opacity:0.5;' : ''}">${r.title || '—'}</td>
@@ -622,11 +663,10 @@ function renderManual(rows) {
       <td style="color:var(--muted);${alreadyApplied ? 'opacity:0.5;' : ''}">${r.platform || '—'}</td>
       <td style="color:var(--gold);${alreadyApplied ? 'opacity:0.5;' : ''}">${r.salary_listed || '—'}</td>
       <td style="color:var(--muted); font-size:11px;${alreadyApplied ? 'opacity:0.5;' : ''}">${r.reason || '—'}</td>
-      <td>${btnHtml}</td>
+      <td style="white-space:nowrap;">${applyBtn}${discardBtn}</td>
     </tr>`;
   }).join('');
-  // Store rows on window so onclick can reference them
-  window._manualRows = filtered;
+  window._manualRows = visible;
 }
 
 function renderActiveTab() {

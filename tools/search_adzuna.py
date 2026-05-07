@@ -127,7 +127,7 @@ def search_adzuna(keywords, location, days=7, max_pages=3):
             "results_per_page": RESULTS_PER_PAGE,
             "what":             keywords,
             "where":            city,
-            "distance":         30,
+            "distance":         20,
             "sort_by":          "date",
             "max_days_old":     days,
             "content-type":     "application/json",
