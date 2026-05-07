@@ -10,6 +10,7 @@ import os
 import sys
 from collections import Counter
 from datetime import date, datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -60,7 +61,9 @@ def get_sheet_rows():
 
 def build_payload(rows):
     today = date.today()
-    now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    now_et = datetime.now(ZoneInfo("America/New_York"))
+    tz_label = "EDT" if now_et.dst().seconds else "EST"
+    now_utc = now_et.strftime(f"%Y-%m-%d %I:%M %p {tz_label}")
     cutoff = (today - timedelta(days=FOLLOW_UP_DAYS)).isoformat()
 
     status_counts = Counter(r.get("status", "") for r in rows)
