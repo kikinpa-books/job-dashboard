@@ -36,7 +36,8 @@ def load_search_config():
 
 def load_raw_jobs():
     all_jobs = []
-    for fname in ["jobs_raw_indeed.json", "jobs_raw_linkedin.json", "jobs_raw_glassdoor.json"]:
+    for fname in ["jobs_raw_indeed.json", "jobs_raw_linkedin.json", "jobs_raw_glassdoor.json",
+                  "jobs_raw_ziprecruiter.json", "jobs_raw_simplyhired.json"]:
         path = TMP / fname
         if path.exists():
             with open(path) as f:

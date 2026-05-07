@@ -1,7 +1,7 @@
 # Workflow 01: Search Jobs
 
 ## Objective
-Collect raw job listings from LinkedIn, Indeed, and Glassdoor based on the user's current search configuration.
+Collect raw job listings from LinkedIn, Indeed, Glassdoor, ZipRecruiter, and SimplyHired based on the user's current search configuration.
 
 ## Required Inputs
 - `.tmp/search_config.json` (created by `tools/prompt_search_config.py`)
@@ -13,11 +13,13 @@ Collect raw job listings from LinkedIn, Indeed, and Glassdoor based on the user'
 
 1. Verify `.tmp/search_config.json` exists. If not, run `tools/prompt_search_config.py` first.
 
-2. Run each search tool. These can run sequentially (LinkedIn is most likely to need attention):
+2. Run each search tool sequentially (LinkedIn is most likely to need attention):
    ```
    python tools/search_indeed.py
    python tools/search_glassdoor.py
    python tools/search_linkedin.py
+   python tools/search_ziprecruiter.py
+   python tools/search_simplyhired.py
    ```
 
 3. Each tool reads `search_config.json` automatically if no arguments are passed.
@@ -26,6 +28,8 @@ Collect raw job listings from LinkedIn, Indeed, and Glassdoor based on the user'
    - `.tmp/jobs_raw_indeed.json`
    - `.tmp/jobs_raw_glassdoor.json`
    - `.tmp/jobs_raw_linkedin.json`
+   - `.tmp/jobs_raw_ziprecruiter.json`
+   - `.tmp/jobs_raw_simplyhired.json`
 
 ## Edge Cases
 
@@ -41,6 +45,8 @@ Collect raw job listings from LinkedIn, Indeed, and Glassdoor based on the user'
 - `.tmp/jobs_raw_indeed.json`
 - `.tmp/jobs_raw_linkedin.json`
 - `.tmp/jobs_raw_glassdoor.json`
+- `.tmp/jobs_raw_ziprecruiter.json`
+- `.tmp/jobs_raw_simplyhired.json`
 
 ## Next Step
 Proceed to `02_filter_jobs.md`.
