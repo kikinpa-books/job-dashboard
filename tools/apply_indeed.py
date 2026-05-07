@@ -94,6 +94,20 @@ def apply_indeed(job_id, apply_url, resume_path, cover_letter_path):
         # Take screenshot so we can see what loaded
         page.screenshot(path=str(TMP / f"apply_page_{job_id}.png"))
 
+        # Check if already applied (Indeed shows "Application submitted" banner)
+        page_text = page.inner_text("body").lower()
+        already_applied_phrases = [
+            "application submitted",
+            "you applied",
+            "already applied",
+            "application received",
+        ]
+        if any(phrase in page_text for phrase in already_applied_phrases):
+            print(f"Already applied detected for {job_id} — logging as Applied.")
+            save_session(context, SESSION_FILE)
+            browser.close()
+            return True
+
         # Try multiple apply button selectors
         apply_btn = page.query_selector(
             "button#indeedApplyButton, "
