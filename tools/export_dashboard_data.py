@@ -79,15 +79,24 @@ def build_payload(rows):
 
     recent = sorted(rows, key=lambda r: r.get("date_applied", ""), reverse=True)[:20]
 
+    # Build sets of already-applied identifiers to deduplicate queues
+    applied_urls = {r.get("apply_url", "").strip() for r in rows if r.get("apply_url")}
+    applied_ids  = {r.get("job_id", "").strip()   for r in rows if r.get("job_id")}
+
+    def not_yet_applied(job):
+        url = (job.get("apply_url") or "").strip()
+        jid = (job.get("job_id")   or "").strip()
+        return url not in applied_urls and jid not in applied_ids
+
     ready_to_apply = []
     if FILTERED_PATH.exists():
         with open(FILTERED_PATH) as f:
-            ready_to_apply = json.load(f)
+            ready_to_apply = [j for j in json.load(f) if not_yet_applied(j)]
 
     manual_apply = []
     if MANUAL_PATH.exists():
         with open(MANUAL_PATH) as f:
-            manual_apply = json.load(f)
+            manual_apply = [j for j in json.load(f) if not_yet_applied(j)]
 
     return {
         "generated": now_utc,
