@@ -46,41 +46,43 @@ def main():
             cfg = json.load(f)
         job_titles = cfg.get("job_titles") or [cfg.get("job_title", "Personal Injury Paralegal")]
 
-    # 1. Search Indeed for each title, merge results
-    print("\n=== Step 1: Search Indeed ===")
-    all_raw = []
-    raw_path = TMP / "jobs_raw_indeed.json"
+    def search_platform(step_name, script, raw_filename):
+        print(f"\n=== {step_name} ===")
+        raw_path = TMP / raw_filename
+        all_raw = []
+        for title in job_titles:
+            print(f"\n  Searching: '{title}'")
+            run([sys.executable, script, "--keywords", title], env=env)
+            if raw_path.exists():
+                with open(raw_path) as f:
+                    batch = json.load(f)
+                all_raw.extend(batch)
+                print(f"  Found {len(batch)} jobs for '{title}'")
+        seen_ids = set()
+        merged = []
+        for job in all_raw:
+            jid = job.get("job_id", "")
+            if jid not in seen_ids:
+                seen_ids.add(jid)
+                merged.append(job)
+        with open(raw_path, "w") as f:
+            json.dump(merged, f, indent=2)
+        print(f"  Total unique: {len(merged)}")
 
-    for title in job_titles:
-        print(f"\n  Searching: '{title}'")
-        run([sys.executable, "tools/search_indeed.py", "--keywords", title], env=env)
-        if raw_path.exists():
-            with open(raw_path) as f:
-                batch = json.load(f)
-            all_raw.extend(batch)
-            print(f"  Found {len(batch)} jobs for '{title}'")
+    # 1. Search all platforms
+    search_platform("Step 1: Search Indeed",      "tools/search_indeed.py",      "jobs_raw_indeed.json")
+    search_platform("Step 2: Search ZipRecruiter", "tools/search_ziprecruiter.py", "jobs_raw_ziprecruiter.json")
+    search_platform("Step 3: Search SimplyHired",  "tools/search_simplyhired.py",  "jobs_raw_simplyhired.json")
 
-    # Deduplicate by job_id and write merged results
-    seen_ids = set()
-    merged = []
-    for job in all_raw:
-        jid = job.get("job_id", "")
-        if jid not in seen_ids:
-            seen_ids.add(jid)
-            merged.append(job)
-    with open(raw_path, "w") as f:
-        json.dump(merged, f, indent=2)
-    print(f"\nTotal unique jobs after merge: {len(merged)}")
-
-    # 2. Filter
-    print("\n=== Step 2: Filter jobs ===")
+    # 4. Filter
+    print("\n=== Step 4: Filter jobs ===")
     ok = run([sys.executable, "tools/filter_jobs.py"], env=env)
     if not ok:
         print("ERROR: filter_jobs.py failed.")
         sys.exit(1)
 
-    # 3. Apply
-    print("\n=== Step 3: Apply to Indeed jobs ===")
+    # 5. Apply
+    print("\n=== Step 5: Apply to Indeed jobs ===")
     filtered_path = TMP / "jobs_filtered.json"
     if not filtered_path.exists():
         print("No jobs_filtered.json found, skipping apply step.")
@@ -156,8 +158,8 @@ def main():
 
         print(f"\nApplied to {applied} jobs.")
 
-    # 4. Export dashboard
-    print("\n=== Step 4: Export dashboard data ===")
+    # 6. Export dashboard
+    print("\n=== Step 6: Export dashboard data ===")
     run([sys.executable, "tools/export_dashboard_data.py"], env=env)
 
     print("\n=== Pipeline complete ===")
