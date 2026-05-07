@@ -1,8 +1,8 @@
 {
-  "generated": "2026-05-07 07:38 PM EDT",
+  "generated": "2026-05-07 07:45 PM EDT",
   "summary": {
-    "total": 14,
-    "applied": 14,
+    "total": 16,
+    "applied": 16,
     "interviewing": 0,
     "offer": 0,
     "rejected": 0,
@@ -17,7 +17,7 @@
     ],
     [
       "Adzuna",
-      5
+      7
     ],
     [
       "ZipRecruiter",
@@ -71,6 +71,14 @@
     ],
     [
       "Real Estate Paralegal",
+      1
+    ],
+    [
+      "Commercial Paralegal",
+      1
+    ],
+    [
+      "Insurance Defense Paralegal",
       1
     ]
   ],
@@ -146,6 +154,24 @@
       "platform": "Adzuna",
       "status": "Applied",
       "apply_url": "https://www.adzuna.com/details/5721704958?utm_medium=api&utm_source=18888b84"
+    },
+    {
+      "date_applied": "2026-05-07",
+      "company": "Celsius",
+      "title": "Commercial Paralegal",
+      "location": "Boca Raton, Palm Beach County",
+      "platform": "Adzuna",
+      "status": "Applied",
+      "apply_url": "https://www.adzuna.com/land/ad/5721831816?se=NFBSPlhK8RG90-MdKnz7dw&utm_medium=api&utm_source=18888b84&v=5E5DBAAC4E1E24ECFCC682CC0DF79627E7BC155E"
+    },
+    {
+      "date_applied": "2026-05-07",
+      "company": "Jobot",
+      "title": "Insurance Defense Paralegal",
+      "location": "Miami, Miami-Dade County",
+      "platform": "Adzuna",
+      "status": "Applied",
+      "apply_url": "https://www.adzuna.com/details/5721709881?utm_medium=api&utm_source=18888b84"
     },
     {
       "date_applied": "2026-05-06",
@@ -233,15 +259,6 @@
       "reason": "Apply on Adzuna"
     },
     {
-      "company": "Celsius",
-      "title": "Commercial Paralegal",
-      "location": "Boca Raton, Palm Beach County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5721831816?se=NFBSPlhK8RG90-MdKnz7dw&utm_medium=api&utm_source=18888b84&v=5E5DBAAC4E1E24ECFCC682CC0DF79627E7BC155E",
-      "salary_listed": "$104,595 \u2013 $104,595/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
       "company": "Contact Government Services, LLC",
       "title": "Paralegal (Top Secret Clearance Required)",
       "location": "Miami, Miami-Dade County",
@@ -275,15 +292,6 @@
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5721710660?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$121,247 \u2013 $121,247/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Jobot",
-      "title": "Insurance Defense Paralegal",
-      "location": "Miami, Miami-Dade County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5721709881?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$82,644 \u2013 $82,644/yr",
       "reason": "Apply on Adzuna"
     },
     {
