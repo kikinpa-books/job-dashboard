@@ -127,8 +127,14 @@ def main():
     print("Loading raw job files...")
     all_jobs = load_raw_jobs()
     if not all_jobs:
-        print("ERROR: No raw job files found. Run the search tools first.")
-        sys.exit(1)
+        print("WARNING: No raw job files found — writing empty filter output.")
+        output = TMP / "jobs_filtered.json"
+        manual_output = TMP / "jobs_manual.json"
+        with open(output, "w") as f:
+            json.dump([], f)
+        with open(manual_output, "w") as f:
+            json.dump([], f)
+        return
 
     print(f"\nScoring {len(all_jobs)} total listings...")
     scored = []

@@ -66,14 +66,19 @@ def _get_credentials():
 
 def get_client():
     sa_json = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON")
+    print(f"DEBUG get_client: GOOGLE_SERVICE_ACCOUNT_JSON present={bool(sa_json)}, len={len(sa_json) if sa_json else 0}")
     if sa_json:
-        from google.oauth2.service_account import Credentials as SACredentials
-        sa_info = json.loads(sa_json)
-        creds = SACredentials.from_service_account_info(
-            sa_info,
-            scopes=["https://www.googleapis.com/auth/spreadsheets"],
-        )
-        return gspread.authorize(creds)
+        try:
+            from google.oauth2.service_account import Credentials as SACredentials
+            sa_info = json.loads(sa_json)
+            creds = SACredentials.from_service_account_info(
+                sa_info,
+                scopes=["https://www.googleapis.com/auth/spreadsheets"],
+            )
+            return gspread.authorize(creds)
+        except Exception as e:
+            print(f"ERROR: Service account auth failed: {e}")
+            raise
     creds = _get_credentials()
     return gspread.authorize(creds)
 
