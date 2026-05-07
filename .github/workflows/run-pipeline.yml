@@ -34,7 +34,7 @@ jobs:
             "job_titles": ["Personal Injury Paralegal", "Real Estate Paralegal", "Paralegal"],
             "job_title": "Personal Injury Paralegal",
             "location": "Fort Lauderdale, FL",
-            "min_salary": 70000,
+            "min_salary": 65000,
             "days": 7,
             "max_applications": 10
           }
