@@ -534,16 +534,21 @@ async function confirmManualApply(job, cell, didApply) {
     );
 
     if (res.ok || res.status === 204) {
-      // Remove the row from the table immediately
-      cell.closest('tr').style.transition = 'opacity 0.4s ease';
-      cell.closest('tr').style.opacity = '0';
+      // Remove the row immediately (optimistic)
+      const row = cell.closest('tr');
+      row.style.transition = 'opacity 0.4s ease';
+      row.style.opacity = '0';
       setTimeout(() => {
-        cell.closest('tr').remove();
-        // Update badge count
+        row.remove();
         const badge = document.getElementById('manual-badge');
         const current = parseInt(badge.textContent || '0');
         if (current > 0) badge.textContent = current - 1;
       }, 400);
+
+      // Show status in header and poll until workflow finishes, then reload all tables
+      const status = document.getElementById('pipeline-status');
+      status.style.display = 'flex';
+      await pollWorkflow('log-manual-application.yml', status, null, 8000, 30);
     } else {
       cell.innerHTML = `<span style="color:#f87171; font-size:12px;">Error — try again</span>`;
     }
@@ -662,39 +667,58 @@ async function runPipeline() {
     return;
   }
 
-  // Poll for the run to finish
-  status.innerHTML = '<span class="pulse-dot" style="background:var(--gold);"></span> Running...';
-  let runId = null;
-  const token_ = localStorage.getItem('gh_pat');
-  const headers = { Authorization: `token ${token_}` };
+  // Poll until done (up to 20 min, every 15s)
+  await pollWorkflow(WORKFLOW, status, () => {
+    btn.disabled = false; btn.style.opacity = '1'; btn.style.cursor = 'pointer';
+  });
+}
 
-  for (let i = 0; i < 12; i++) {
-    await new Promise(r => setTimeout(r, 5000));
+// Shared poller — checks a workflow until completed, then reloads data
+async function pollWorkflow(workflow, statusEl, onDone, intervalMs = 15000, maxAttempts = 80) {
+  const token = localStorage.getItem('gh_pat');
+  const headers = { Authorization: `token ${token}` };
+  let triggeredRunId = null;
+  const startTime = Date.now();
+
+  if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:var(--gold);"></span> Running...';
+
+  for (let i = 0; i < maxAttempts; i++) {
+    await new Promise(r => setTimeout(r, intervalMs));
     try {
       const runsRes = await fetch(
-        `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/runs?per_page=1`,
+        `https://api.github.com/repos/${REPO}/actions/workflows/${workflow}/runs?per_page=5`,
         { headers }
       );
       const runs = await runsRes.json();
-      const run = runs.workflow_runs?.[0];
+      // Find the run that started after we triggered (within last 5 minutes)
+      const run = (runs.workflow_runs || []).find(r =>
+        new Date(r.created_at).getTime() >= startTime - 30000
+      ) || runs.workflow_runs?.[0];
+
       if (!run) continue;
-      runId = run.id;
+      triggeredRunId = run.id;
+
+      const elapsed = Math.round((Date.now() - startTime) / 60000);
+      if (statusEl) statusEl.innerHTML = `<span class="pulse-dot" style="background:var(--gold);"></span> Running... (${elapsed}m)`;
+
       if (run.status === 'completed') {
         const ok = run.conclusion === 'success';
-        status.innerHTML = ok
+        if (statusEl) statusEl.innerHTML = ok
           ? '<span style="color:#6ee7a0;">Done — reloading...</span>'
-          : `<span style="color:#f87171;">Pipeline ${run.conclusion}</span>`;
-        if (ok) { await new Promise(r => setTimeout(r, 2000)); await loadData(); }
-        btn.disabled = false; btn.style.opacity = '1'; btn.style.cursor = 'pointer';
-        setTimeout(() => { status.style.display = 'none'; }, 4000);
+          : `<span style="color:#f87171;">Failed (${run.conclusion})</span>`;
+        if (ok) {
+          await new Promise(r => setTimeout(r, 3000)); // wait for Pages to deploy
+          await loadData();
+        }
+        if (onDone) onDone(ok);
+        if (statusEl) setTimeout(() => { statusEl.style.display = 'none'; }, 5000);
         return;
       }
     } catch (_) {}
   }
 
-  // Timed out polling — pipeline may still be running
-  status.innerHTML = `<span style="color:var(--muted);">Running in background</span>`;
-  btn.disabled = false; btn.style.opacity = '1'; btn.style.cursor = 'pointer';
+  if (statusEl) statusEl.innerHTML = `<span style="color:var(--muted);">Still running — refresh manually when done</span>`;
+  if (onDone) onDone(false);
 }
 
 </script>
