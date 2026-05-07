@@ -8,6 +8,7 @@ First-time setup:
      This opens a browser OAuth flow and saves token.json for future runs.
 """
 
+import json
 import os
 import sys
 from pathlib import Path
@@ -64,6 +65,15 @@ def _get_credentials():
 
 
 def get_client():
+    sa_json = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON")
+    if sa_json:
+        from google.oauth2.service_account import Credentials as SACredentials
+        sa_info = json.loads(sa_json)
+        creds = SACredentials.from_service_account_info(
+            sa_info,
+            scopes=["https://www.googleapis.com/auth/spreadsheets"],
+        )
+        return gspread.authorize(creds)
     creds = _get_credentials()
     return gspread.authorize(creds)
 
