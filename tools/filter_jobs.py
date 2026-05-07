@@ -36,8 +36,8 @@ def load_search_config():
 
 def load_raw_jobs():
     all_jobs = []
-    for fname in ["jobs_raw_indeed.json", "jobs_raw_linkedin.json", "jobs_raw_glassdoor.json",
-                  "jobs_raw_ziprecruiter.json", "jobs_raw_simplyhired.json"]:
+    for fname in ["jobs_raw_adzuna.json", "jobs_raw_indeed.json", "jobs_raw_linkedin.json",
+                  "jobs_raw_glassdoor.json", "jobs_raw_ziprecruiter.json", "jobs_raw_simplyhired.json"]:
         path = TMP / fname
         if path.exists():
             with open(path) as f:
@@ -152,6 +152,8 @@ def main():
 
     # Only Indeed jobs are auto-applied remotely; everything else goes to manual review
     AUTO_PLATFORMS = {"Indeed"}
+    # Adzuna redirects to external sites so always manual
+
     auto = [j for j in scored if j.get("platform") in AUTO_PLATFORMS]
     manual = [j for j in scored if j.get("platform") not in AUTO_PLATFORMS]
 

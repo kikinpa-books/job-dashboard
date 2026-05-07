@@ -70,9 +70,10 @@ def main():
         print(f"  Total unique: {len(merged)}")
 
     # 1. Search all platforms
-    search_platform("Step 1: Search Indeed",      "tools/search_indeed.py",      "jobs_raw_indeed.json")
-    search_platform("Step 2: Search ZipRecruiter", "tools/search_ziprecruiter.py", "jobs_raw_ziprecruiter.json")
-    search_platform("Step 3: Search SimplyHired",  "tools/search_simplyhired.py",  "jobs_raw_simplyhired.json")
+    search_platform("Step 1: Search Adzuna (aggregated)",  "tools/search_adzuna.py",      "jobs_raw_adzuna.json")
+    search_platform("Step 2: Search Indeed",               "tools/search_indeed.py",      "jobs_raw_indeed.json")
+    search_platform("Step 3: Search ZipRecruiter",         "tools/search_ziprecruiter.py", "jobs_raw_ziprecruiter.json")
+    search_platform("Step 4: Search SimplyHired",          "tools/search_simplyhired.py",  "jobs_raw_simplyhired.json")
 
     # 4. Filter
     print("\n=== Step 4: Filter jobs ===")
