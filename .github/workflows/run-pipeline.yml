@@ -26,6 +26,13 @@ jobs:
           pip install playwright beautifulsoup4 gspread google-auth google-auth-oauthlib python-dotenv anthropic reportlab
           playwright install chromium --with-deps
 
+      - name: Write search config
+        run: |
+          mkdir -p .tmp
+          cat > .tmp/search_config.json << 'EOF'
+          {"job_title": "Personal Injury Paralegal", "location": "Fort Lauderdale, FL", "min_salary": 70000, "days": 7, "max_applications": 10}
+          EOF
+
       - name: Run pipeline
         env:
           HEADLESS: "1"
