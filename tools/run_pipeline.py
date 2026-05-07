@@ -38,11 +38,39 @@ def run(cmd, **kwargs):
 def main():
     env = {**os.environ, "HEADLESS": os.environ.get("HEADLESS", "1")}
 
-    # 1. Search Indeed
+    # Load search config to get all job titles
+    config_path = TMP / "search_config.json"
+    job_titles = ["Personal Injury Paralegal"]
+    if config_path.exists():
+        with open(config_path) as f:
+            cfg = json.load(f)
+        job_titles = cfg.get("job_titles") or [cfg.get("job_title", "Personal Injury Paralegal")]
+
+    # 1. Search Indeed for each title, merge results
     print("\n=== Step 1: Search Indeed ===")
-    ok = run([sys.executable, "tools/search_indeed.py"], env=env)
-    if not ok:
-        print("WARNING: Indeed search failed, continuing with existing data if available.")
+    all_raw = []
+    raw_path = TMP / "jobs_raw_indeed.json"
+
+    for title in job_titles:
+        print(f"\n  Searching: '{title}'")
+        run([sys.executable, "tools/search_indeed.py", "--keywords", title], env=env)
+        if raw_path.exists():
+            with open(raw_path) as f:
+                batch = json.load(f)
+            all_raw.extend(batch)
+            print(f"  Found {len(batch)} jobs for '{title}'")
+
+    # Deduplicate by job_id and write merged results
+    seen_ids = set()
+    merged = []
+    for job in all_raw:
+        jid = job.get("job_id", "")
+        if jid not in seen_ids:
+            seen_ids.add(jid)
+            merged.append(job)
+    with open(raw_path, "w") as f:
+        json.dump(merged, f, indent=2)
+    print(f"\nTotal unique jobs after merge: {len(merged)}")
 
     # 2. Filter
     print("\n=== Step 2: Filter jobs ===")

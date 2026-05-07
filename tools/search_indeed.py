@@ -28,11 +28,14 @@ load_dotenv(ROOT / ".env")
 
 def load_config(args):
     config_file = TMP / "search_config.json"
-    if not args.keywords and config_file.exists():
+    cfg = {}
+    if config_file.exists():
         with open(config_file) as f:
             cfg = json.load(f)
-        return cfg.get("job_title", ""), cfg.get("location", ""), 7
-    return args.keywords, args.location, args.days
+    keywords = args.keywords or cfg.get("job_title", "")
+    location = args.location or cfg.get("location", "")
+    days = args.days or cfg.get("days", 7)
+    return keywords, location, days
 
 
 def build_indeed_url(keywords, location, days):
