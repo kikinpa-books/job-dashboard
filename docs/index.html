@@ -284,10 +284,10 @@
         <table>
           <thead>
             <tr>
-              <th>Company</th><th>Title</th><th>Location</th><th>Platform</th><th>Salary</th><th></th>
+              <th>Company</th><th>Title</th><th>Location</th><th>Platform</th><th>Salary</th><th>Reason</th><th></th>
             </tr>
           </thead>
-          <tbody id="tbody-manual"><tr><td colspan="6" style="padding:32px; text-align:center; color:var(--muted);">Loading…</td></tr></tbody>
+          <tbody id="tbody-manual"><tr><td colspan="7" style="padding:32px; text-align:center; color:var(--muted);">Loading…</td></tr></tbody>
         </table>
       </div>
     </div>
@@ -461,27 +461,110 @@ function renderReady(rows) {
   `).join('');
 }
 
+function getAppliedIds() {
+  // Build set of job_ids already in the tracker (from recent applications)
+  const applied = new Set();
+  (DATA.recent || []).forEach(r => { if (r.apply_url) applied.add(r.apply_url); });
+  // Also check localStorage for optimistic updates (logged this session)
+  try {
+    const local = JSON.parse(localStorage.getItem('applied_manual') || '[]');
+    local.forEach(id => applied.add(id));
+  } catch (_) {}
+  return applied;
+}
+
+async function logManualApply(job, btn) {
+  const token = localStorage.getItem('gh_pat');
+  if (!token) {
+    alert('No GitHub token found. Click Run Agent first to set it up.');
+    return;
+  }
+
+  // Open the job URL immediately
+  if (job.apply_url) window.open(job.apply_url, '_blank', 'noopener');
+
+  // Mark optimistically in localStorage
+  try {
+    const local = JSON.parse(localStorage.getItem('applied_manual') || '[]');
+    if (!local.includes(job.apply_url)) local.push(job.apply_url);
+    localStorage.setItem('applied_manual', JSON.stringify(local));
+  } catch (_) {}
+
+  // Update button immediately
+  btn.textContent = 'Logging...';
+  btn.disabled = true;
+  btn.style.opacity = '0.6';
+
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${REPO}/actions/workflows/log-manual-application.yml/dispatches`,
+      {
+        method: 'POST',
+        headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ref: 'master',
+          inputs: {
+            job_id: job.job_id || ('manual_' + Date.now()),
+            title: job.title || '',
+            company: job.company || '',
+            location: job.location || '',
+            platform: job.platform || '',
+            apply_url: job.apply_url || '',
+            salary: job.salary_listed || '',
+          }
+        }),
+      }
+    );
+    if (res.ok || res.status === 204) {
+      btn.textContent = 'Applied';
+      btn.style.background = 'rgba(34,197,94,0.12)';
+      btn.style.color = '#6ee7a0';
+      btn.style.borderColor = 'rgba(34,197,94,0.3)';
+    } else {
+      btn.textContent = 'Error';
+      btn.style.color = '#f87171';
+      btn.disabled = false;
+      btn.style.opacity = '1';
+    }
+  } catch (e) {
+    btn.textContent = 'Error';
+    btn.style.color = '#f87171';
+    btn.disabled = false;
+    btn.style.opacity = '1';
+  }
+}
+
 function renderManual(rows) {
   const tbody = document.getElementById('tbody-manual');
   const badge = document.getElementById('manual-badge');
   const filtered = filterRows(rows);
+  const appliedUrls = getAppliedIds();
   badge.textContent = rows.length;
   badge.style.display = rows.length ? 'inline' : 'none';
 
   if (!filtered.length) {
-    tbody.innerHTML = '<tr><td colspan="6" style="padding:32px; text-align:center; color:var(--muted);">No manual-apply jobs queued.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="7" style="padding:32px; text-align:center; color:var(--muted);">No manual-apply jobs queued.</td></tr>';
     return;
   }
-  tbody.innerHTML = filtered.map(r => `
-    <tr>
-      <td style="font-weight:500;">${r.company || '—'}</td>
-      <td>${r.title || '—'}</td>
-      <td style="color:var(--muted);">${r.location || '—'}</td>
-      <td style="color:var(--muted);">${r.platform || '—'}</td>
-      <td style="color:var(--gold);">${r.salary_listed || '—'}</td>
-      <td>${r.apply_url ? `<a href="${r.apply_url}" target="_blank" rel="noopener" class="apply-link">Apply</a>` : '—'}</td>
-    </tr>
-  `).join('');
+  tbody.innerHTML = filtered.map((r, i) => {
+    const alreadyApplied = r.apply_url && appliedUrls.has(r.apply_url);
+    const btnHtml = r.apply_url
+      ? alreadyApplied
+        ? `<span class="apply-link" style="color:#6ee7a0; border-color:rgba(34,197,94,0.3); cursor:default;">Applied</span>`
+        : `<button onclick="logManualApply(window._manualRows[${i}], this)" style="padding:3px 12px; border-radius:6px; border:1px solid rgba(201,168,76,0.3); background:none; color:var(--gold); font-size:12px; cursor:pointer; transition:background 0.15s;">Apply</button>`
+      : '—';
+    return `<tr>
+      <td style="font-weight:500;${alreadyApplied ? 'opacity:0.5;' : ''}">${r.company || '—'}</td>
+      <td style="${alreadyApplied ? 'opacity:0.5;' : ''}">${r.title || '—'}</td>
+      <td style="color:var(--muted);${alreadyApplied ? 'opacity:0.5;' : ''}">${r.location || '—'}</td>
+      <td style="color:var(--muted);${alreadyApplied ? 'opacity:0.5;' : ''}">${r.platform || '—'}</td>
+      <td style="color:var(--gold);${alreadyApplied ? 'opacity:0.5;' : ''}">${r.salary_listed || '—'}</td>
+      <td style="color:var(--muted); font-size:11px;${alreadyApplied ? 'opacity:0.5;' : ''}">${r.reason || '—'}</td>
+      <td>${btnHtml}</td>
+    </tr>`;
+  }).join('');
+  // Store rows on window so onclick can reference them
+  window._manualRows = filtered;
 }
 
 function renderActiveTab() {

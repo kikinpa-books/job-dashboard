@@ -1,0 +1,73 @@
+name: Log Manual Application
+
+on:
+  workflow_dispatch:
+    inputs:
+      job_id:
+        required: true
+      title:
+        required: true
+      company:
+        required: true
+      location:
+        default: ""
+      platform:
+        default: ""
+      apply_url:
+        default: ""
+      salary:
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install gspread google-auth google-auth-oauthlib python-dotenv
+
+      - name: Log application to Google Sheets
+        env:
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          python tools/log_application.py \
+            --job_id "${{ inputs.job_id }}" \
+            --title "${{ inputs.title }}" \
+            --company "${{ inputs.company }}" \
+            --location "${{ inputs.location }}" \
+            --platform "${{ inputs.platform }}" \
+            --apply_url "${{ inputs.apply_url }}" \
+            --salary "${{ inputs.salary }}" \
+            --status "Applied"
+
+      - name: Export updated dashboard data
+        env:
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: python tools/export_dashboard_data.py
+
+      - name: Commit and push dashboard data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data/applications.json
+          if git diff --cached --quiet; then
+            echo "No changes — skipping commit."
+          else
+            git commit -m "dashboard: log manual application $(date -u +%Y-%m-%d)"
+            git push
+          fi
