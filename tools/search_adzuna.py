@@ -13,11 +13,12 @@ Usage:
 import argparse
 import json
 import os
+import re
 import sys
 import time
 from datetime import date, datetime, timedelta
 from pathlib import Path
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlparse
 from urllib.request import urlopen, Request
 from urllib.error import HTTPError
 
@@ -51,6 +52,38 @@ def fetch_json(url):
     req = Request(url, headers={"User-Agent": "KikinpaJobTracker/1.0"})
     with urlopen(req, timeout=15) as resp:
         return json.loads(resp.read().decode())
+
+
+DOMAIN_TO_PLATFORM = {
+    "indeed.com":        "Indeed",
+    "linkedin.com":      "LinkedIn",
+    "ziprecruiter.com":  "ZipRecruiter",
+    "simplyhired.com":   "SimplyHired",
+    "glassdoor.com":     "Glassdoor",
+    "monster.com":       "Monster",
+    "careerbuilder.com": "CareerBuilder",
+    "dice.com":          "Dice",
+    "jobble.com":        "Jobble",
+    "snagajob.com":      "Snagajob",
+    "recruitics.com":    "Recruitics",
+    "lever.co":          "Lever",
+    "greenhouse.io":     "Greenhouse",
+    "workday.com":       "Workday",
+    "icims.com":         "iCIMS",
+}
+
+
+def _source_from_url(url):
+    if not url:
+        return "Adzuna"
+    try:
+        host = urlparse(url).netloc.lower().lstrip("www.")
+        for domain, name in DOMAIN_TO_PLATFORM.items():
+            if domain in host:
+                return name
+    except Exception:
+        pass
+    return "Adzuna"
 
 
 def search_adzuna(keywords, location, days=7, max_pages=3):
@@ -114,9 +147,8 @@ def search_adzuna(keywords, location, days=7, max_pages=3):
             elif salary_min:
                 salary = f"${int(salary_min):,}+/yr"
 
-            # Adzuna aggregates many boards; mark source when available
-            adref = r.get("adref", "")
-            platform = "Adzuna"
+            # Extract the source board from the redirect URL
+            platform = _source_from_url(url_job)
 
             all_jobs.append({
                 "job_id":        job_id,
