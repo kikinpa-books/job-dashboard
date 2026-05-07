@@ -407,7 +407,7 @@ function renderRecent(rows) {
     <tr>
       <td style="color:var(--muted); white-space:nowrap;">${r.date_applied || '—'}</td>
       <td style="font-weight:500;">${r.company || '—'}</td>
-      <td>${r.title || '—'}</td>
+      <td>${r.apply_url ? `<a href="${r.apply_url}" target="_blank" rel="noopener" style="color:var(--text); text-decoration:none; border-bottom:1px solid rgba(201,168,76,0.4);" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text)'">${r.title || '—'}</a>` : (r.title || '—')}</td>
       <td style="color:var(--muted);">${r.location || '—'}</td>
       <td style="color:var(--muted);">${r.platform || '—'}</td>
       <td>${badgeFor(r.status)}</td>

@@ -101,7 +101,7 @@ def build_payload(rows):
         "by_platform": platform_counts.most_common(),
         "by_title": title_counts.most_common(),
         "recent": [
-            {k: r.get(k, "") for k in ["date_applied", "company", "title", "location", "platform", "status"]}
+            {k: r.get(k, "") for k in ["date_applied", "company", "title", "location", "platform", "status", "apply_url"]}
             for r in recent
         ],
         "follow_up": [
