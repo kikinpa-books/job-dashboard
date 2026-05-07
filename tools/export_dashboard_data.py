@@ -9,7 +9,7 @@ import json
 import os
 import sys
 from collections import Counter
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -59,10 +59,12 @@ def get_sheet_rows():
 
 def build_payload(rows):
     today = date.today()
+    now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     cutoff = (today - timedelta(days=FOLLOW_UP_DAYS)).isoformat()
 
     status_counts = Counter(r.get("status", "") for r in rows)
     platform_counts = Counter(r.get("platform", "") for r in rows)
+    title_counts = Counter(r.get("title", "") for r in rows if r.get("title"))
 
     needs_follow_up = [
         r for r in rows
@@ -79,7 +81,7 @@ def build_payload(rows):
             ready_to_apply = json.load(f)
 
     return {
-        "generated": today.isoformat(),
+        "generated": now_utc,
         "summary": {
             "total": len(rows),
             "applied": status_counts.get("Applied", 0),
@@ -91,6 +93,7 @@ def build_payload(rows):
             "needs_follow_up": len(needs_follow_up),
         },
         "by_platform": platform_counts.most_common(),
+        "by_title": title_counts.most_common(),
         "recent": [
             {k: r.get(k, "") for k in ["date_applied", "company", "title", "location", "platform", "status"]}
             for r in recent
