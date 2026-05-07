@@ -143,20 +143,51 @@ def main():
 
     print(f"After scoring: {len(scored)} pass the threshold (min score {args.min_score})")
 
-    unique = deduplicate(scored)
-    unique.sort(key=lambda j: j["score"], reverse=True)
+    # Split: auto-applicable vs. manual (LinkedIn non-Easy-Apply)
+    auto = [j for j in scored if not (j.get("platform") == "LinkedIn" and not j.get("easy_apply", True))]
+    manual = [j for j in scored if j.get("platform") == "LinkedIn" and not j.get("easy_apply", True)]
 
-    print(f"After deduplication: {len(unique)} unique listings")
+    # Add any LinkedIn non-easy-apply jobs that scored below threshold too
+    for job in all_jobs:
+        title_lower = job.get("title", "").lower()
+        if any(kw in title_lower for kw in EXCLUDE_TITLE_KEYWORDS):
+            continue
+        if job.get("platform") == "LinkedIn" and not job.get("easy_apply", True):
+            job_id = job.get("job_id")
+            if not any(m.get("job_id") == job_id for m in manual):
+                job["reason"] = "LinkedIn non-Easy-Apply"
+                manual.append(job)
+
+    for job in manual:
+        job["reason"] = "LinkedIn non-Easy-Apply"
+        # Clean duplicated title text (LinkedIn scraper artifact)
+        title = job.get("title", "")
+        mid = len(title) // 2
+        if title[:mid] == title[mid:]:
+            job["title"] = title[:mid]
+        elif " with verification" in title:
+            job["title"] = title.split(" with verification")[0]
+
+    auto = deduplicate(auto)
+    auto.sort(key=lambda j: j["score"], reverse=True)
+    manual = deduplicate(manual)
+
+    print(f"After deduplication: {len(auto)} auto-apply, {len(manual)} manual-apply listings")
 
     output = TMP / "jobs_filtered.json"
     with open(output, "w") as f:
-        json.dump(unique, f, indent=2)
+        json.dump(auto, f, indent=2)
 
-    print(f"\nTop 5 results:")
-    for job in unique[:5]:
+    manual_output = TMP / "jobs_manual.json"
+    with open(manual_output, "w") as f:
+        json.dump(manual, f, indent=2)
+
+    print(f"\nTop 5 auto-apply results:")
+    for job in auto[:5]:
         print(f"  [{job['score']}] {job['company']} | {job['title']} | {job['location']} | {job['platform']}")
 
-    print(f"\nSaved {len(unique)} filtered jobs to {output}")
+    print(f"\nSaved {len(auto)} filtered jobs to {output}")
+    print(f"Saved {len(manual)} manual-apply jobs to {manual_output}")
 
 
 if __name__ == "__main__":

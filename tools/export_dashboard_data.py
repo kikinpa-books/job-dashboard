@@ -20,6 +20,7 @@ FILTERED_PATH = TMP / "jobs_filtered.json"
 
 FOLLOW_UP_DAYS = 7
 SHEET_NAME_APPLICATIONS = "Applications"
+MANUAL_PATH = TMP / "jobs_manual.json"
 
 
 def get_sheet_rows():
@@ -80,6 +81,11 @@ def build_payload(rows):
         with open(FILTERED_PATH) as f:
             ready_to_apply = json.load(f)
 
+    manual_apply = []
+    if MANUAL_PATH.exists():
+        with open(MANUAL_PATH) as f:
+            manual_apply = json.load(f)
+
     return {
         "generated": now_utc,
         "summary": {
@@ -105,6 +111,10 @@ def build_payload(rows):
         "ready_to_apply": [
             {k: j.get(k, "") for k in ["score", "company", "title", "location", "platform", "apply_url"]}
             for j in ready_to_apply
+        ],
+        "manual_apply": [
+            {k: j.get(k, "") for k in ["company", "title", "location", "platform", "apply_url", "salary_listed", "reason"]}
+            for j in manual_apply
         ],
     }
 
