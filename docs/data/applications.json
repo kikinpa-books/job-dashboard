@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-14 07:13 PM EDT",
+  "generated": "2026-05-15 12:07 AM EDT",
   "summary": {
     "total": 17,
     "applied": 17,
@@ -8,7 +8,7 @@
     "rejected": 0,
     "withdrew": 0,
     "errors": 0,
-    "needs_follow_up": 16
+    "needs_follow_up": 17
   },
   "by_platform": [
     [
@@ -353,6 +353,13 @@
       "title": "Insurance Defense Paralegal",
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5721709881?utm_medium=api&utm_source=18888b84"
+    },
+    {
+      "date_applied": "2026-05-08",
+      "company": "Rossen Law Firm",
+      "title": "Client Care Liaison",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5716980283?se=pryykqFK8RG90-MdKnz7dw&utm_medium=api&utm_source=18888b84&v=9778D08F733D38A43FFA28C30152555555C45F44"
     }
   ],
   "ready_to_apply": [],
