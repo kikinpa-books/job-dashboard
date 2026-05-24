@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-24 09:51 AM EDT",
+  "generated": "2026-05-24 10:22 AM EDT",
   "summary": {
     "total": 17,
     "applied": 17,
@@ -365,6 +365,15 @@
   "ready_to_apply": [],
   "manual_apply": [
     {
+      "company": "Reinfeld Cabrera Tison",
+      "title": "Personal Injury Litigation Paralegal",
+      "location": "Coral Springs, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5738367531?se=lKARy3tX8RGvjPD20Sc1wQ&utm_medium=api&utm_source=18888b84&v=132C3BCFEC353D2F169CBFB29FC4A0FA13C2EB6C",
+      "salary_listed": "$76,008 \u2013 $76,008/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
       "company": "Jobot",
       "title": "Personal Injury Litigation Paralegal",
       "location": "Fort Lauderdale, Broward County",
@@ -383,6 +392,15 @@
       "reason": "Apply on Adzuna"
     },
     {
+      "company": "JM Family",
+      "title": "Corporate Paralegal",
+      "location": "Deerfield Beach, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5739714862?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$70,106 \u2013 $70,106/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
       "company": "Kelley Kronenberg",
       "title": "Paralegal (Foreclosure)",
       "location": "Cooper City, Broward County",
@@ -392,12 +410,39 @@
       "reason": "Apply on Adzuna"
     },
     {
+      "company": "MBC Talent Connections",
+      "title": "Immigration Business Paralegal",
+      "location": "Fort Lauderdale, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5737749562?se=iscqzHtX8RGWQvEe2bTbLw&utm_medium=api&utm_source=18888b84&v=E02E77CA1F0F0FCB658764AC55DCB0410A31AC55",
+      "salary_listed": "$67,458 \u2013 $67,458/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
       "company": "Morgan, Akins & Jackson, PLLC",
       "title": "Defense Attorney",
       "location": "Fort Lauderdale, Broward County",
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5736914778?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$85,798 \u2013 $85,798/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "Optimal Staffing",
+      "title": "Paralegal",
+      "location": "Fort Lauderdale, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5735999396?se=iscqzHtX8RGWQvEe2bTbLw&utm_medium=api&utm_source=18888b84&v=3E3BBA01FB6D11C33E7104A54F5EA4F78C7376EE",
+      "salary_listed": "$86,250 \u2013 $86,250/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "David W. Singer & Associates",
+      "title": "Litgation Paralegal",
+      "location": "Fort Lauderdale, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5735917339?se=iscqzHtX8RGWQvEe2bTbLw&utm_medium=api&utm_source=18888b84&v=3659DCD9853B5DDEF11A47D934248EC55C0EE96B",
+      "salary_listed": "$49,411 \u2013 $49,411/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -437,12 +482,48 @@
       "reason": "Apply on Adzuna"
     },
     {
-      "company": "The Ward Law Group, PL",
-      "title": "Recruiter",
-      "location": "Miami Lakes, Miami-Dade County",
+      "company": "Diaz Anselmo & Assoc. PA",
+      "title": "Contested Litigation Supervisor",
+      "location": "Sunrise, Broward County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5738529221?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$52,266 \u2013 $52,266/yr",
+      "apply_url": "https://www.adzuna.com/details/5739711048?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$92,057 \u2013 $92,057/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "Diaz Anselmo & Assoc. PA",
+      "title": "Client Performance Administrative Assistant",
+      "location": "Sunrise, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5739547179?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$67,672 \u2013 $67,672/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "SagePaths",
+      "title": "Senior Corporate Attorney (Venture / Emerging Companies)",
+      "location": "Boca Raton, Palm Beach County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5739467039?se=iscqzHtX8RGWQvEe2bTbLw&utm_medium=api&utm_source=18888b84&v=219892229A5BA9D584E3433B2360F6EEF6405928",
+      "salary_listed": "$174,257 \u2013 $174,257/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "Astor Simovitch LLP",
+      "title": "Civil Litigation Paralegal",
+      "location": "Boca Raton, Palm Beach County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5739386640?se=iscqzHtX8RGWQvEe2bTbLw&utm_medium=api&utm_source=18888b84&v=98A45AAD0DEC26B06C90A86FD2F842D1705FB5C7",
+      "salary_listed": "$60,269 \u2013 $60,269/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "Diaz Anselmo & Assoc. PA",
+      "title": "Legal Assistant \u2013 Foreclosure/ Default Operations",
+      "location": "Sunrise, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5738553565?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$54,436 \u2013 $54,436/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -479,15 +560,6 @@
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5733820250?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$57,487 \u2013 $57,487/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Nationwide Mutual Insurance",
-      "title": "Sr. Trial Attorney",
-      "location": "Plantation, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5732110579?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$138,000 \u2013 $243,000/yr",
       "reason": "Apply on Adzuna"
     }
   ]
