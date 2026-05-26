@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-26 05:53 PM EDT",
+  "generated": "2026-05-26 07:03 PM EDT",
   "summary": {
     "total": 17,
     "applied": 17,
@@ -365,6 +365,15 @@
   "ready_to_apply": [],
   "manual_apply": [
     {
+      "company": "Ascension Global Staffing and Executive Search",
+      "title": "Medical Records Clerk",
+      "location": "Fort Lauderdale, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5741338784?se=IrnfsFZZ8RGBjO8nXeSlkg&utm_medium=api&utm_source=18888b84&v=C94A27894793547B0A4C4E0F32D278F11DA70B19",
+      "salary_listed": "$76,375 \u2013 $76,375/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
       "company": "Jobot",
       "title": "Personal Injury Litigation Paralegal",
       "location": "Fort Lauderdale, Broward County",
@@ -374,12 +383,21 @@
       "reason": "Apply on Adzuna"
     },
     {
-      "company": "Wyman Legal Solutions",
-      "title": "Experienced Florida Litigation Paralegal",
-      "location": "Boca Raton, Palm Beach County",
+      "company": "Liberty Personnel Services, Inc",
+      "title": "Real Estate Paralegal",
+      "location": "Oakland Park, Broward County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5740987873?se=lnhGKSFZ8RG4lsJaMgBbHQ&utm_medium=api&utm_source=18888b84&v=31DEBDA667F526EE51EF7DC6A97559EFAB174EA7",
-      "salary_listed": "$162,798 \u2013 $162,798/yr",
+      "apply_url": "https://www.adzuna.com/details/5728536487?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$85,000 \u2013 $100,000/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "Jobot",
+      "title": "Hybrid Foreclosure & Collections Paralegal",
+      "location": "Fort Lauderdale, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5741704845?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$53,740 \u2013 $53,740/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -393,20 +411,11 @@
     },
     {
       "company": "Denovo Review",
-      "title": "Personal Injury Litigation Attorney (341)",
+      "title": "PIP Paralegal- On Site (180)",
       "location": "Fort Lauderdale, Broward County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5740570971?se=lnhGKSFZ8RG4lsJaMgBbHQ&utm_medium=api&utm_source=18888b84&v=B65F1EB177C2065B6470AF2DD4EFF5CB4CEA6C11",
-      "salary_listed": "$74,295 \u2013 $74,295/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Mayersohn Law Group, P.A.",
-      "title": "Criminal Defense Attorney",
-      "location": "Fort Lauderdale, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5739852389?se=lnhGKSFZ8RG4lsJaMgBbHQ&utm_medium=api&utm_source=18888b84&v=C0EB453D32457CE9E17EF24CBAE04DB0E191D907",
-      "salary_listed": "$119,928 \u2013 $119,928/yr",
+      "apply_url": "https://www.adzuna.com/land/ad/5740223399?se=Qv-tvVZZ8RGIceqnUvMPfg&utm_medium=api&utm_source=18888b84&v=B5954635A53580C760D326D31C454546F14A61D3",
+      "salary_listed": "$42,842 \u2013 $42,842/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -437,24 +446,6 @@
       "reason": "Apply on Adzuna"
     },
     {
-      "company": "Optimal Staffing",
-      "title": "Paralegal",
-      "location": "Fort Lauderdale, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5735999396?se=lnhGKSFZ8RG4lsJaMgBbHQ&utm_medium=api&utm_source=18888b84&v=3E3BBA01FB6D11C33E7104A54F5EA4F78C7376EE",
-      "salary_listed": "$86,250 \u2013 $86,250/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "",
-      "title": "Asbestos Intake Paralegal",
-      "location": "Fort Lauderdale, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5734653957?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$50,216 \u2013 $50,216/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
       "company": "South Florida Law PLLC",
       "title": "Real Estate Paralegal/Processor",
       "location": "Hallandale, Broward County",
@@ -464,11 +455,20 @@
       "reason": "Apply on Adzuna"
     },
     {
+      "company": "Howard Law",
+      "title": "Experienced Real Estate Closing Paralegal - Part-Time",
+      "location": "Boca Raton, Palm Beach County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5729865800?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$46,553 \u2013 $46,553/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
       "company": "Brown Sims PC",
       "title": "Litigation Paralegal",
       "location": "Hollywood, Broward County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5741313526?se=lnhGKSFZ8RG4lsJaMgBbHQ&utm_medium=api&utm_source=18888b84&v=008DC939F6818BB7AF5FD6427B62CAADC990C7EB",
+      "apply_url": "https://www.adzuna.com/land/ad/5741313526?se=Qv-tvVZZ8RGIceqnUvMPfg&utm_medium=api&utm_source=18888b84&v=008DC939F6818BB7AF5FD6427B62CAADC990C7EB",
       "salary_listed": "$64,937 \u2013 $64,937/yr",
       "reason": "Apply on Adzuna"
     },
@@ -536,15 +536,6 @@
       "reason": "Apply on Adzuna"
     },
     {
-      "company": "Grimaldi Law Firm",
-      "title": "Paralegal For Estate Planning",
-      "location": "Hollywood, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5737749263?se=lnhGKSFZ8RG4lsJaMgBbHQ&utm_medium=api&utm_source=18888b84&v=448429F51B55928057E29AF2011FCAA163C78649",
-      "salary_listed": "$63,320 \u2013 $63,320/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
       "company": "Robinson and Casey, PLLC",
       "title": "Client Concierge",
       "location": "Boca Raton, Palm Beach County",
@@ -554,11 +545,20 @@
       "reason": "Apply on Adzuna"
     },
     {
+      "company": "Wyman Legal Solutions",
+      "title": "Mid-Level Construction Attorney",
+      "location": "Boca Raton, Palm Beach County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5736578195?se=Qv-tvVZZ8RGIceqnUvMPfg&utm_medium=api&utm_source=18888b84&v=BF16A15B54609250A7A097C3CD3A7E4BB04EFF37",
+      "salary_listed": "$178,889 \u2013 $178,889/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
       "company": "Cannon Recruiting llc",
       "title": "Junior Family Law Attorney",
       "location": "Boca Raton, Palm Beach County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5736535842?se=lnhGKSFZ8RG4lsJaMgBbHQ&utm_medium=api&utm_source=18888b84&v=4B0BBDE656881E221DD25B0616CAC851BF561F77",
+      "apply_url": "https://www.adzuna.com/land/ad/5736535842?se=Qv-tvVZZ8RGIceqnUvMPfg&utm_medium=api&utm_source=18888b84&v=4B0BBDE656881E221DD25B0616CAC851BF561F77",
       "salary_listed": "$87,213 \u2013 $87,213/yr",
       "reason": "Apply on Adzuna"
     },
@@ -567,7 +567,7 @@
       "title": "Bankruptcy Lawyer",
       "location": "Boca Raton, Palm Beach County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5736534457?se=lnhGKSFZ8RG4lsJaMgBbHQ&utm_medium=api&utm_source=18888b84&v=EA17A0C1C924AE2CA638BC9C724504E185DCF7D5",
+      "apply_url": "https://www.adzuna.com/land/ad/5736534457?se=Qv-tvVZZ8RGIceqnUvMPfg&utm_medium=api&utm_source=18888b84&v=EA17A0C1C924AE2CA638BC9C724504E185DCF7D5",
       "salary_listed": "$80,910 \u2013 $80,910/yr",
       "reason": "Apply on Adzuna"
     }
