@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-30 09:56 AM EDT",
+  "generated": "2026-05-30 10:26 AM EDT",
   "summary": {
     "total": 17,
     "applied": 17,
@@ -365,12 +365,30 @@
   "ready_to_apply": [],
   "manual_apply": [
     {
-      "company": "Reinfeld Cabrera Tison",
-      "title": "Personal Injury Litigation Paralegal",
+      "company": "Kelley Kronenberg",
+      "title": "Foreclosure Sales Paralegal",
+      "location": "Cooper City, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5745455718?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$77,882 \u2013 $77,882/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "Fiserv",
+      "title": "Paralegal - Subpoena Response Team",
       "location": "Coral Springs, Broward County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5738367531?se=RAxCj7Jb8RGbGvW-bcCcHA&utm_medium=api&utm_source=18888b84&v=132C3BCFEC353D2F169CBFB29FC4A0FA13C2EB6C",
-      "salary_listed": "$76,008 \u2013 $76,008/yr",
+      "apply_url": "https://www.adzuna.com/details/5745054191?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$89,096 \u2013 $89,096/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "Kelley Kronenberg",
+      "title": "Legal Assistant - General Liability",
+      "location": "Cooper City, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5744443473?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$89,071 \u2013 $89,071/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -419,6 +437,15 @@
       "reason": "Apply on Adzuna"
     },
     {
+      "company": "Celsius",
+      "title": "Litigation Paralegal",
+      "location": "Boca Raton, Palm Beach County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5741945931?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$106,676 \u2013 $106,676/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
       "company": "Jobot",
       "title": "Hybrid Foreclosure & Collections Paralegal",
       "location": "Fort Lauderdale, Broward County",
@@ -434,6 +461,15 @@
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5740829978?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$52,289 \u2013 $52,289/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "Denovo Review",
+      "title": "PIP Paralegal- On Site (180)",
+      "location": "Fort Lauderdale, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5740223399?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$42,842 \u2013 $42,842/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -455,21 +491,12 @@
       "reason": "Apply on Adzuna"
     },
     {
-      "company": "Kelley Kronenberg",
-      "title": "Paralegal (Foreclosure)",
-      "location": "Cooper City, Broward County",
+      "company": "Law Firm",
+      "title": "Legal Assistant",
+      "location": "Boca Raton, Palm Beach County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5738621922?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$77,417 \u2013 $77,417/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Rubenstein Law",
-      "title": "Paralegal",
-      "location": "Cooper City, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5738519755?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$70,451 \u2013 $70,451/yr",
+      "apply_url": "https://www.adzuna.com/land/ad/5739512750?se=YCqQXTNc8RGbGvW-bcCcHA&utm_medium=api&utm_source=18888b84&v=F481D2330C4387AD3648728BD2B3D39AC55E4A79",
+      "salary_listed": "$42,040 \u2013 $42,040/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -479,6 +506,15 @@
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5742815715?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$58,755 \u2013 $58,755/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "Grimaldi Law Firm",
+      "title": "Senior Estate Planning Attorney",
+      "location": "Hollywood, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5745290642?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$135,240 \u2013 $135,240/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -495,17 +531,8 @@
       "title": "Civil Litigation Paralegal",
       "location": "Boca Raton, Palm Beach County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5741875571?se=TtUikLJb8RGbGvW-bcCcHA&utm_medium=api&utm_source=18888b84&v=92E73FCA753942CB30D1356E79AB4B049365924C",
+      "apply_url": "https://www.adzuna.com/land/ad/5741875571?se=yKVWXjNc8RG1g60cORqbZQ&utm_medium=api&utm_source=18888b84&v=92E73FCA753942CB30D1356E79AB4B049365924C",
       "salary_listed": "$60,269 \u2013 $60,269/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Brown Sims PC",
-      "title": "Litigation Paralegal",
-      "location": "Hollywood, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5741313526?se=TtUikLJb8RGbGvW-bcCcHA&utm_medium=api&utm_source=18888b84&v=008DC939F6818BB7AF5FD6427B62CAADC990C7EB",
-      "salary_listed": "$64,937 \u2013 $64,937/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -533,33 +560,6 @@
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5739547179?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$67,672 \u2013 $67,672/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Diaz Anselmo & Assoc. PA",
-      "title": "Legal Assistant \u2013 Foreclosure/ Default Operations",
-      "location": "Sunrise, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5738553565?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$54,436 \u2013 $54,436/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Diaz Anselmo & Assoc. PA",
-      "title": "Title Manager- Foreclosure/ Title/ Default Operations",
-      "location": "Sunrise, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5738456811?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$76,274 \u2013 $76,274/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Rubenstein Law",
-      "title": "Litigation Assistant",
-      "location": "Cooper City, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5738345719?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$89,308 \u2013 $89,308/yr",
       "reason": "Apply on Adzuna"
     }
   ]
