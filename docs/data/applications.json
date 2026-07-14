@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-14 05:06 PM EDT",
+  "generated": "2026-07-14 06:46 PM EDT",
   "summary": {
     "total": 17,
     "applied": 17,
@@ -365,12 +365,39 @@
   "ready_to_apply": [],
   "manual_apply": [
     {
+      "company": "Nelson Mullins Riley & Scarborough",
+      "title": "Commercial Real Estate Paralegal",
+      "location": "Highland Beach, Palm Beach County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5800113800?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$77,961 \u2013 $77,961/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
       "company": "YMP Real Estate Management",
       "title": "Paralegal",
       "location": "South Florida, Broward County",
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5795395182?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$71,341 \u2013 $71,341/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "Rubenstein Law, P.A.",
+      "title": "Litigation Assistant",
+      "location": "Fort Lauderdale, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5800111268?se=hg4httV_8RGnybZGKZMVYw&utm_medium=api&utm_source=18888b84&v=6EC4118BF2F3937E1EFA64CA52A47F33E072C747",
+      "salary_listed": "$82,941 \u2013 $82,941/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "Denovo Review",
+      "title": "Litigation Paralegal Complex Litigation (126)",
+      "location": "Fort Lauderdale, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5800103218?se=hg4httV_8RGnybZGKZMVYw&utm_medium=api&utm_source=18888b84&v=1F7832DB8C59C347C733D846D93AFF702F4B4D22",
+      "salary_listed": "$70,486 \u2013 $70,486/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -428,30 +455,12 @@
       "reason": "Apply on Adzuna"
     },
     {
-      "company": "Rogers Morris & Ziegler",
-      "title": "Litigation Paralegal",
-      "location": "Fort Lauderdale, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5798919251?se=7qDHRJJ_8RGkYaPgtI4p1Q&utm_medium=api&utm_source=18888b84&v=222E29B3CBBE47A3D64A89CDFD5926051CC86BB2",
-      "salary_listed": "$71,399 \u2013 $71,399/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
       "company": "Gpac",
       "title": "Family Law Paralegal",
       "location": "Fort Lauderdale, Broward County",
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5798783587?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$50,000 \u2013 $80,000/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Madalon Law",
-      "title": "Personal Injury Litigation Attorney",
-      "location": "Fort Lauderdale, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5798456545?se=7qDHRJJ_8RGkYaPgtI4p1Q&utm_medium=api&utm_source=18888b84&v=8F4FDBE9B64E2AE3EA23C0EB2133C0EBF231DA69",
-      "salary_listed": "$112,136 \u2013 $112,136/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -491,12 +500,12 @@
       "reason": "Apply on Adzuna"
     },
     {
-      "company": "JRG Partners Inc",
-      "title": "Office Manager",
-      "location": "Highland Beach, Palm Beach County",
+      "company": "Internal Revenue Service",
+      "title": "General Attorney (Tax) (Special Counsel)",
+      "location": "Plantation, Broward County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5799957556?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$61,704 \u2013 $61,704/yr",
+      "apply_url": "https://www.adzuna.com/details/5800220061?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$145,223 \u2013 $145,223/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -506,15 +515,6 @@
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5799558453?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$57,244 \u2013 $57,244/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "David W. Singer & Associates",
-      "title": "Litgation Paralegal",
-      "location": "Hollywood, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5799447264?se=7qDHRJJ_8RGkYaPgtI4p1Q&utm_medium=api&utm_source=18888b84&v=6526D1F466BC2483344E0DD4F9E63D15A9A33B71",
-      "salary_listed": "$48,392 \u2013 $48,392/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -536,12 +536,12 @@
       "reason": "Apply on Adzuna"
     },
     {
-      "company": "International Law Partners LLP",
-      "title": "Litigation Paralegal",
-      "location": "Hollywood, Broward County",
+      "company": "The Ticktin Law Group",
+      "title": "Legal Assistant/ Paralegal",
+      "location": "Deerfield Beach, Broward County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5798938878?se=7qDHRJJ_8RGkYaPgtI4p1Q&utm_medium=api&utm_source=18888b84&v=C270316E93A3EBCA36922462F0B02BCE808FB9CB",
-      "salary_listed": "$58,948 \u2013 $58,948/yr",
+      "apply_url": "https://www.adzuna.com/land/ad/5798456450?se=hg4httV_8RGnybZGKZMVYw&utm_medium=api&utm_source=18888b84&v=95433A83466C1D30A61EDFA325FEDB4BB58F6A0D",
+      "salary_listed": "$32,863 \u2013 $32,863/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -599,15 +599,6 @@
       "reason": "Apply on Adzuna"
     },
     {
-      "company": "Rubenstein Law, P.A.",
-      "title": "Litigation Assistant",
-      "location": "Plantation, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5796199741?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$82,501 \u2013 $82,501/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
       "company": "Mrlp Llp",
       "title": "Onsite Client Liaison",
       "location": "Fort Lauderdale, Broward County",
@@ -623,15 +614,6 @@
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5794059271?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$106,652 \u2013 $106,652/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Grimaldi Law Firm",
-      "title": "Senior Estate Planning Attorney",
-      "location": "Hollywood, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5792868145?se=7qDHRJJ_8RGkYaPgtI4p1Q&utm_medium=api&utm_source=18888b84&v=515039329314BAC0FB0CC1D666D790AAE1E2F788",
-      "salary_listed": "$151,291 \u2013 $151,291/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -657,7 +639,7 @@
       "title": "Digital Reporter Lead",
       "location": "North Miami Beach, Miami-Dade County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5792185187?se=7qDHRJJ_8RGkYaPgtI4p1Q&utm_medium=api&utm_source=18888b84&v=47BFC36DDDA5EB74ACCB9F53068E0C56E471604E",
+      "apply_url": "https://www.adzuna.com/land/ad/5792185187?se=hg4httV_8RGnybZGKZMVYw&utm_medium=api&utm_source=18888b84&v=47BFC36DDDA5EB74ACCB9F53068E0C56E471604E",
       "salary_listed": "$98,775 \u2013 $98,775/yr",
       "reason": "Apply on Adzuna"
     }
