@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-16 10:10 AM EDT",
+  "generated": "2026-07-16 10:54 AM EDT",
   "summary": {
     "total": 17,
     "applied": 17,
@@ -374,20 +374,11 @@
       "reason": "Apply on Adzuna"
     },
     {
-      "company": "Morgan & Morgan",
-      "title": "Seeking Paralegal New Grads!",
-      "location": "Fort Lauderdale, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5787996185?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$60,142 \u2013 $60,142/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
       "company": "Jobot",
       "title": "In-House Corporate Paralegal (Real Estate/Hospitality)",
       "location": "Aventura, Miami-Dade County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5801157907?utm_medium=api&utm_source=18888b84",
+      "apply_url": "https://www.adzuna.com/land/ad/5801157907?se=nJzLECaB8RGvFsqt5AlAaA&utm_medium=api&utm_source=18888b84&v=C94626554900A262B830FC9B4A34C32A30540DD8",
       "salary_listed": "$101,320 \u2013 $101,320/yr",
       "reason": "Apply on Adzuna"
     },
@@ -401,39 +392,30 @@
       "reason": "Apply on Adzuna"
     },
     {
+      "company": "Diaz Anselmo & Assoc. PA",
+      "title": "Title Manager- Foreclosure/ Title/ Default Operations",
+      "location": "Fort Lauderdale, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5802218950?se=BPpBESaB8RGxWf0Q5h4kpA&utm_medium=api&utm_source=18888b84&v=C9C61CC68636661C8CC9F824C11C8226B2525D05",
+      "salary_listed": "$80,666 \u2013 $80,666/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "RAS LaVrar",
+      "title": "Paralegal / Legal Admin- FL",
+      "location": "Fort Lauderdale, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5802172915?se=BPpBESaB8RGxWf0Q5h4kpA&utm_medium=api&utm_source=18888b84&v=1312A7CF5D9E09BA9A6CEAD3C694D6D4F72ADC6C",
+      "salary_listed": "$65,330 \u2013 $65,330/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
       "company": "Jobot",
       "title": "Litigation Legal Assistant",
       "location": "Fort Lauderdale, Broward County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5801855345?utm_medium=api&utm_source=18888b84",
+      "apply_url": "https://www.adzuna.com/land/ad/5801855345?se=BPpBESaB8RGxWf0Q5h4kpA&utm_medium=api&utm_source=18888b84&v=E0B2120A8FC913A1E923AE2877A8A12F141F3D01",
       "salary_listed": "$87,849 \u2013 $87,849/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Grimaldi Law Firm",
-      "title": "Paralegal For Estate Planning",
-      "location": "West Hollywood, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5801550735?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$69,419 \u2013 $69,419/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Rogers, Morris & Ziegler LLP",
-      "title": "Litigation Paralegal",
-      "location": "Lazy Lake, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5801533355?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$84,379 \u2013 $84,379/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Workway, Inc.",
-      "title": "Litigation Paralegal",
-      "location": "Fort Lauderdale, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5801389157?se=mghlNZ-A8RGDMNFo9qkXsw&utm_medium=api&utm_source=18888b84&v=BF788C3BF4FDCE40AD423E0686F2CF9451F415B0",
-      "salary_listed": "$57,759 \u2013 $57,759/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -509,12 +491,57 @@
       "reason": "Apply on Adzuna"
     },
     {
+      "company": "Rogers, Morris & Ziegler LLP",
+      "title": "Litigation Paralegal",
+      "location": "Fort Lauderdale, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5797663430?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$71,874 \u2013 $71,874/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
       "company": "Us Claims Capital Llc",
       "title": "Personal Injury Paralegal",
       "location": "Highland Beach, Palm Beach County",
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5792032862?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$52,458 \u2013 $52,458/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "Diaz Anselmo & Assoc. PA",
+      "title": "Legal Assistant- Evictions",
+      "location": "Sunrise, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5802727304?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$47,504 \u2013 $47,504/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "The Presser Law Firm, P.A.",
+      "title": "PARALEGAL",
+      "location": "Boca Raton, Palm Beach County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5802173296?se=BPpBESaB8RGxWf0Q5h4kpA&utm_medium=api&utm_source=18888b84&v=4AA66504DC8BD3C8D9319383F0A18251B4B11B38",
+      "salary_listed": "$62,455 \u2013 $62,455/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "ManpowerGroup",
+      "title": "Business Licensing & Compliance Specialist (Contractor Licensing) - Hybrid | Boca Raton, FL",
+      "location": "Boca Raton, Palm Beach County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5802029091?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$201,667 \u2013 $201,667/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "The Freelance Firm, LLC",
+      "title": "Full-Time, Hybrid Miramar Florida Personal Injury Litigation Attorney Opportunity - Base salary of $",
+      "location": "Hollywood, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5801379297?se=BPpBESaB8RGxWf0Q5h4kpA&utm_medium=api&utm_source=18888b84&v=6824B20E06BA53B6616AAB9A47BBA489BDA569FF",
+      "salary_listed": "$92,730 \u2013 $92,730/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -527,7 +554,7 @@
       "reason": "Apply on Adzuna"
     },
     {
-      "company": "Cynet Systems",
+      "company": "CYNET SYSTEMS",
       "title": "Business Licensing Compliance Administrator",
       "location": "Highland Beach, Palm Beach County",
       "platform": "Adzuna",
@@ -560,6 +587,15 @@
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5799081530?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$107,872 \u2013 $107,872/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "The Ticktin Law Group",
+      "title": "Legal Assistant/ Paralegal",
+      "location": "Deerfield Beach, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5798456450?se=BPpBESaB8RGxWf0Q5h4kpA&utm_medium=api&utm_source=18888b84&v=95433A83466C1D30A61EDFA325FEDB4BB58F6A0D",
+      "salary_listed": "$32,863 \u2013 $32,863/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -623,33 +659,6 @@
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5796199741?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$82,501 \u2013 $82,501/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Mrlp Llp",
-      "title": "Onsite Client Liaison",
-      "location": "Fort Lauderdale, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5794142284?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$50,000 \u2013 $55,000/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Kelley Kronenberg",
-      "title": "Associate Attorney (Uncontested Foreclosure)",
-      "location": "Cooper City, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5794059271?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$106,652 \u2013 $106,652/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Shelomith Law",
-      "title": "Legal Assistant",
-      "location": "Fort Lauderdale, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5793692121?se=mghlNZ-A8RGDMNFo9qkXsw&utm_medium=api&utm_source=18888b84&v=6EB2C22FFA5081BB3B1431812731FC62443654B7",
-      "salary_listed": "$38,318 \u2013 $38,318/yr",
       "reason": "Apply on Adzuna"
     }
   ]
