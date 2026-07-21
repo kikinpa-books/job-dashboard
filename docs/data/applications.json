@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-21 05:18 PM EDT",
+  "generated": "2026-07-21 06:45 PM EDT",
   "summary": {
     "total": 17,
     "applied": 17,
@@ -387,8 +387,17 @@
       "title": "In-House Corporate Paralegal (Real Estate/Hospitality)",
       "location": "Aventura, Miami-Dade County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5801157907?se=iG-2WxSF8RGhxoXSuotBiw&utm_medium=api&utm_source=18888b84&v=C94626554900A262B830FC9B4A34C32A30540DD8",
+      "apply_url": "https://www.adzuna.com/details/5801157907?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$101,320 \u2013 $101,320/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "RAS LaVrar LLC",
+      "title": "Paralegal Legal Admin",
+      "location": "Lazy Lake, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5809693530?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$74,974 \u2013 $74,974/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -446,11 +455,20 @@
       "reason": "Apply on Adzuna"
     },
     {
+      "company": "Robertson Anschutz Schneid Crane and Partners PLLC",
+      "title": "Paralegal / Legal Admin- FL",
+      "location": "Plantation, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5809646978?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$59,729 \u2013 $59,729/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
       "company": "USA Employment Lawyers \u2013 Jordan Richards, PLLC",
       "title": "Chief Operating Officer",
       "location": "Lazy Lake, Broward County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5809420322?se=ilsYXBSF8RG974pouqc-_w&utm_medium=api&utm_source=18888b84&v=796D9DE337F50372AF345CEE33CEC6A2D6848D57",
+      "apply_url": "https://www.adzuna.com/land/ad/5809420322?se=oHQ0u1WF8RGgQcTn0fwhJg&utm_medium=api&utm_source=18888b84&v=796D9DE337F50372AF345CEE33CEC6A2D6848D57",
       "salary_listed": "$200,978 \u2013 $200,978/yr",
       "reason": "Apply on Adzuna"
     },
@@ -461,15 +479,6 @@
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5809201766?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$143,796 \u2013 $143,796/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "Diaz Anselmo & Assoc. PA",
-      "title": "Legal Assistant- Evictions",
-      "location": "Fort Lauderdale, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5808270727?se=ilsYXBSF8RG974pouqc-_w&utm_medium=api&utm_source=18888b84&v=28956C14FA5D04EEDF7AF04036628B42AC4C901C",
-      "salary_listed": "$49,672 \u2013 $49,672/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -500,12 +509,12 @@
       "reason": "Apply on Adzuna"
     },
     {
-      "company": "The Freelance Firm, LLC",
-      "title": "Full-Time, Hybrid Miramar Florida Personal Injury Litigation Attorney Opportunity - Base salary of $",
-      "location": "Hollywood, Broward County",
+      "company": "Diaz Anselmo & Assoc. PA",
+      "title": "Legal Assistant- Evictions",
+      "location": "Sunrise, Broward County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5801379297?se=ilsYXBSF8RG974pouqc-_w&utm_medium=api&utm_source=18888b84&v=6824B20E06BA53B6616AAB9A47BBA489BDA569FF",
-      "salary_listed": "$92,730 \u2013 $92,730/yr",
+      "apply_url": "https://www.adzuna.com/details/5802727304?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$47,504 \u2013 $47,504/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -515,15 +524,6 @@
       "platform": "Adzuna",
       "apply_url": "https://www.adzuna.com/details/5801010925?utm_medium=api&utm_source=18888b84",
       "salary_listed": "$57,619 \u2013 $57,619/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
-      "company": "CYNET SYSTEMS",
-      "title": "Business Licensing Compliance Administrator",
-      "location": "Highland Beach, Palm Beach County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/details/5800509389?utm_medium=api&utm_source=18888b84",
-      "salary_listed": "$51,230 \u2013 $61,630/yr",
       "reason": "Apply on Adzuna"
     }
   ]
