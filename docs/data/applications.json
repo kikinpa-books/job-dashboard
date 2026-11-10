@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-09 09:37 PM EST",
+  "generated": "2026-11-09 10:54 PM EST",
   "summary": {
     "total": 17,
     "applied": 17,
@@ -365,15 +365,6 @@
   "ready_to_apply": [],
   "manual_apply": [
     {
-      "company": "State Farm Mutual Automobile Insurance Company",
-      "title": "Bodily Injury-Insurance Defense Paralegal",
-      "location": "Fort Lauderdale, Broward County",
-      "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5959392187?se=bODoko_c8RGMldQtWIx3hg&utm_medium=api&utm_source=18888b84&v=603DBBD042906BA8F2BDE5F5FC4D824905E3DB1A",
-      "salary_listed": "$93,784 \u2013 $93,784/yr",
-      "reason": "Apply on Adzuna"
-    },
-    {
       "company": "Esquire Law",
       "title": "Litigation Paralegal - Steinger, Greene, and Feiner",
       "location": "Fort Lauderdale, Broward County",
@@ -387,8 +378,17 @@
       "title": "Bodily Injury-Insurance Defense Paralegal (Fort Lauderdale)",
       "location": "Fort Lauderdale, Broward County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5957213942?se=bODoko_c8RGMldQtWIx3hg&utm_medium=api&utm_source=18888b84&v=6436905D6EE3F14C4046662316FBB7AF37C37907",
+      "apply_url": "https://www.adzuna.com/land/ad/5957213942?se=9JkPPLrc8RGMldQtWIx3hg&utm_medium=api&utm_source=18888b84&v=6436905D6EE3F14C4046662316FBB7AF37C37907",
       "salary_listed": "$72,000 \u2013 $72,000/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "State Farm Mutual Automobile Insurance Company",
+      "title": "Bodily Injury-Insurance Defense Paralegal",
+      "location": "Fort Lauderdale, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5957212071?se=9JkPPLrc8RGMldQtWIx3hg&utm_medium=api&utm_source=18888b84&v=01F2B48ED495598244A31A5A2D542D4B3F8278EE",
+      "salary_listed": "$96,838 \u2013 $96,838/yr",
       "reason": "Apply on Adzuna"
     },
     {
@@ -432,7 +432,7 @@
       "title": "Business Attorney | Nonprofit Organizations",
       "location": "Fort Lauderdale, Broward County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5958755283?se=apmolI_c8RGWVLlCAvhPhA&utm_medium=api&utm_source=18888b84&v=2099A6D3AA57FAAE896A4536B258D26C95882821",
+      "apply_url": "https://www.adzuna.com/land/ad/5958755283?se=qrKyPbrc8RGMldQtWIx3hg&utm_medium=api&utm_source=18888b84&v=2099A6D3AA57FAAE896A4536B258D26C95882821",
       "salary_listed": "$94,869 \u2013 $94,869/yr",
       "reason": "Apply on Adzuna"
     },
@@ -450,7 +450,7 @@
       "title": "Bodily Injury Insurance Defense Paralegal",
       "location": "Fort Lauderdale, Broward County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5956990071?se=apmolI_c8RGWVLlCAvhPhA&utm_medium=api&utm_source=18888b84&v=EF17D7FF2CA2B83BBF6C1AD19E8F250A74F98890",
+      "apply_url": "https://www.adzuna.com/land/ad/5956990071?se=qrKyPbrc8RGMldQtWIx3hg&utm_medium=api&utm_source=18888b84&v=EF17D7FF2CA2B83BBF6C1AD19E8F250A74F98890",
       "salary_listed": "$52,000 \u2013 $78,000/yr",
       "reason": "Apply on Adzuna"
     },
@@ -522,7 +522,7 @@
       "title": "Client Engagement Coordinator",
       "location": "Boca Raton, Palm Beach County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5952094338?se=bODoko_c8RGMldQtWIx3hg&utm_medium=api&utm_source=18888b84&v=69A152BEEA8AA406B54CC41815DFBA8E281B08D4",
+      "apply_url": "https://www.adzuna.com/land/ad/5952094338?se=9JkPPLrc8RGMldQtWIx3hg&utm_medium=api&utm_source=18888b84&v=69A152BEEA8AA406B54CC41815DFBA8E281B08D4",
       "salary_listed": "$56,329 \u2013 $56,329/yr",
       "reason": "Apply on Adzuna"
     },
@@ -536,11 +536,38 @@
       "reason": "Apply on Adzuna"
     },
     {
+      "company": "TEKsystems",
+      "title": "Bilingual Collections Analyst",
+      "location": "West Hollywood, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5959720753?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$75,579 \u2013 $75,579/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "TekSystems",
+      "title": "Bilingual Collections Specialist",
+      "location": "West Hollywood, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5959614156?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$68,141 \u2013 $68,141/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
+      "company": "TekSystems",
+      "title": "Bilingual Collections Analyst (Spanish)",
+      "location": "West Hollywood, Broward County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/details/5959614154?utm_medium=api&utm_source=18888b84",
+      "salary_listed": "$72,821 \u2013 $72,821/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
       "company": "Robert Sheldon's Law Firm",
       "title": "Attorney",
       "location": "Pompano Beach, Broward County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5959355747?se=apmolI_c8RGWVLlCAvhPhA&utm_medium=api&utm_source=18888b84&v=492D84EB02207202E77725D2261F6E5D950AEFB5",
+      "apply_url": "https://www.adzuna.com/land/ad/5959355747?se=qrKyPbrc8RGMldQtWIx3hg&utm_medium=api&utm_source=18888b84&v=492D84EB02207202E77725D2261F6E5D950AEFB5",
       "salary_listed": "$103,328 \u2013 $103,328/yr",
       "reason": "Apply on Adzuna"
     },
@@ -617,6 +644,15 @@
       "reason": "Apply on Adzuna"
     },
     {
+      "company": "Contact Government Services, LLC",
+      "title": "Financial Investigator with Security Clearance",
+      "location": "North Miami Beach, Miami-Dade County",
+      "platform": "Adzuna",
+      "apply_url": "https://www.adzuna.com/land/ad/5954964117?se=qrKyPbrc8RGMldQtWIx3hg&utm_medium=api&utm_source=18888b84&v=C8C029430FDAB38EDDD25463653616193016C9D9",
+      "salary_listed": "$131,612 \u2013 $131,612/yr",
+      "reason": "Apply on Adzuna"
+    },
+    {
       "company": "US DEFAULT GROUP, INC.",
       "title": "Legal Assistant / Back-Up Receptionist",
       "location": "Cooper City, Broward County",
@@ -666,7 +702,7 @@
       "title": "Junior Executive Recruiter",
       "location": "Boca Raton, Palm Beach County",
       "platform": "Adzuna",
-      "apply_url": "https://www.adzuna.com/land/ad/5952093010?se=apmolI_c8RGWVLlCAvhPhA&utm_medium=api&utm_source=18888b84&v=ED92DDE0483838D938FC45238816FC94567F784E",
+      "apply_url": "https://www.adzuna.com/land/ad/5952093010?se=qrKyPbrc8RGMldQtWIx3hg&utm_medium=api&utm_source=18888b84&v=ED92DDE0483838D938FC45238816FC94567F784E",
       "salary_listed": "$50,015 \u2013 $50,015/yr",
       "reason": "Apply on Adzuna"
     }
